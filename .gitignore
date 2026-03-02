@@ -7,3 +7,5 @@ results/*.csv
 *.log
 .DS_Store
 .vite/
+.vercel/
+.vercel

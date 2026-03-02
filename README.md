@@ -105,6 +105,44 @@ CLOUD_MODEL_LARGE=openai/gpt-oss-120b:free
 
 Generation settings: `temperature=0`, `top_p=1`, `max_new_tokens=256` (overridable per prompt).
 
+### Full Prompt List
+
+All prompts are stored in [`benchmarks/workload.json`](benchmarks/workload.json) (also copied to `apps/web/public/workload.json` for browser access).
+
+#### Objective Prompts (1–12)
+
+| #   | ID               | Category    | Scoring     | Prompt                                                                                                           |
+| --- | ---------------- | ----------- | ----------- | ---------------------------------------------------------------------------------------------------------------- |
+| 1   | `math_01`        | math        | numeric     | Compute 17\*23 + 91.                                                                                             |
+| 2   | `math_02`        | math        | numeric     | What is the value of (144/12) + (7\*9)?                                                                          |
+| 3   | `math_03`        | math        | numeric     | What is 2^10? Return only the number.                                                                            |
+| 4   | `json_01`        | json        | json_schema | Return ONLY valid JSON with keys a,b,c where a=2, b is an array [1,2,3], c is the string 'ok'.                   |
+| 5   | `json_02`        | json        | json_schema | Return ONLY JSON: `{ "items": [ {"name":"pen","qty":2}, {"name":"book","qty":1} ], "total_qty": 3 }`             |
+| 6   | `extract_01`     | extraction  | regex       | Extract the email from: 'Contact me at varesh.patel@rutgers.edu thanks' Return only the email.                   |
+| 7   | `extract_02`     | extraction  | exact       | Return the 3rd word in this sentence: 'WebGPU makes browsers fast' Return only the word.                         |
+| 8   | `code_01`        | code        | exact       | In Python, what does len('Rutgers') return? Return only the number.                                              |
+| 9   | `code_02`        | code        | regex       | Write a single-line JavaScript expression that converts string s to lowercase. Return ONLY the code.             |
+| 10  | `logic_01`       | reasoning   | exact       | If all bloops are razzies and all razzies are lazzies, are all bloops definitely lazzies? Answer only YES or NO. |
+| 11  | `instruction_01` | instruction | exact       | Answer with exactly: 'EDGE' (no quotes, no extra text).                                                          |
+| 12  | `instruction_02` | instruction | exact       | Return ONLY the string 'A,B,C' with no spaces.                                                                   |
+
+#### Subjective Prompts (13–24)
+
+| #   | ID                         | Category      | Scoring         | Prompt                                                                                                                                                        |
+| --- | -------------------------- | ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 13  | `summarize_01`             | summarization | embedding+judge | Summarize in 2 sentences: LLMs can run in the browser using WebGPU, reducing latency and improving privacy, but memory and compute limits may reduce quality. |
+| 14  | `coherence_01`             | summarization | embedding+judge | Explain in simple terms what WebGPU is and why it matters for ML in browsers.                                                                                 |
+| 15  | `reasoning_01`             | reasoning     | judge           | You have 3 tasks that take 10, 20, 30 minutes. If you can only do two, which two maximize total time saved if outsourcing? Explain briefly.                   |
+| 16  | `reasoning_02`             | reasoning     | judge           | Explain TTFT vs TPS in one short paragraph, with an example.                                                                                                  |
+| 17  | `reasoning_03`             | reasoning     | judge           | Why might a 4-bit quantized model hallucinate more than a full precision model? Give 3 reasons.                                                               |
+| 18  | `planning_01`              | reasoning     | judge           | Propose an experiment design to compare edge vs cloud inference on 3 devices. Keep it under 6 bullet points.                                                  |
+| 19  | `factual_01`               | factual       | judge           | Name two reasons cloud LLM APIs can be problematic for privacy.                                                                                               |
+| 20  | `instruction_following_01` | instruction   | judge           | Return a bulleted list of 4 evaluation metrics for comparing edge vs cloud LLMs.                                                                              |
+| 21  | `instruction_following_02` | instruction   | judge           | Write a 1-sentence conclusion comparing edge and cloud LLMs. Must mention BOTH latency and quality.                                                           |
+| 22  | `code_03`                  | code          | judge           | Write a short Python function signature (no body) for benchmarking TTFT and TPS. Return only the signature line.                                              |
+| 23  | `json_03`                  | json          | judge           | Return ONLY JSON with keys: 'ttft_ms', 'tps', 'memory_mb' and plausible numeric example values.                                                               |
+| 24  | `extraction_03`            | extraction    | judge           | From this text, extract the device types mentioned: 'We tested on a gaming laptop and a MacBook Air.' Return only a JSON array of strings.                    |
+
 ---
 
 ## Metrics Collected

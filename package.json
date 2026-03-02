@@ -20,7 +20,11 @@
     "install:all": "npm install"
   },
   "devDependencies": {
+    "@vercel/node": "^5.6.9",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "openai": "^6.25.0"
   }
 }
