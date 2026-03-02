@@ -1,0 +1,2212 @@
+[
+  {
+    "runIndex": 0,
+    "device": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15",
+      "platform": "MacIntel",
+      "webgpuAdapter": "apple",
+      "webgpuSupported": true,
+      "timestamp": "2026-03-02T15:41:58.096Z"
+    },
+    "systems": [
+      "edge",
+      "cloud_small",
+      "cloud_large"
+    ],
+    "results": [
+      {
+        "promptId": "math_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "To compute the expression, I'll follow the order of operations (PEMDAS):\n\n1. Multiply 17 and 23: 17*23 = 391\n2. Add 91 to the result: 391 + 91 = 482\n\nThe final answer is 482.",
+        "ttft_ms": 1434,
+        "tps": 23.92,
+        "total_latency_ms": 3901,
+        "tokens_generated": 59,
+        "tokens_generated_whitespace": 35,
+        "prompt_tokens": 4,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "numeric_tolerance",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": 482
+          },
+          "raw_output": "To compute the expression, I'll follow the order of operations (PEMDAS):\n\n1. Multiply 17 and 23: 17*23 = 391\n2. Add 91 to the result: 391 + 91 = 482\n\nThe final answer is 482."
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:42:17.996Z"
+      },
+      {
+        "promptId": "math_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We need to compute 17*23 + 91. 17*23 = 391? Let's compute: 20*17=340, 3*17=51, sum=391. Then +91 = 482. So answer 482.\\(17 \\times 23 = 391\\).  \nAdding 91 gives \\(391 + 91 = 482\\).  \n\n**Answer: 482**",
+        "ttft_ms": 1039,
+        "tps": 112.13,
+        "total_latency_ms": 1806,
+        "tokens_generated": 96,
+        "tokens_generated_whitespace": 36,
+        "prompt_tokens": 78,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "numeric_tolerance",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": 482
+          },
+          "raw_output": "We need to compute 17*23 + 91. 17*23 = 391? Let's compute: 20*17=340, 3*17=51, sum=391. Then +91 = 482. So answer 482.\\(17 \\times 23 = 391\\).  \nAdding 91 gives \\(391 + 91 = 482\\).  \n\n**Answer: 482**"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:42:19.802Z"
+      },
+      {
+        "promptId": "math_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks to compute 17*23 + 91. Compute: 17*23 = 391 (since 17*20=340, +17*3=51 => 391). Then +91 = 482. So answer 482.\\(17 \\times 23 = 391\\)\n\n\\(391 + 91 = 482\\)\n\n**Result:** \\(482\\)",
+        "ttft_ms": 3426,
+        "tps": 25.51,
+        "total_latency_ms": 6641,
+        "tokens_generated": 92,
+        "tokens_generated_whitespace": 35,
+        "prompt_tokens": 78,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "numeric_tolerance",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": 482
+          },
+          "raw_output": "The user asks to compute 17*23 + 91. Compute: 17*23 = 391 (since 17*20=340, +17*3=51 => 391). Then +91 = 482. So answer 482.\\(17 \\times 23 = 391\\)\n\n\\(391 + 91 = 482\\)\n\n**Result:** \\(482\\)"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:42:26.443Z"
+      },
+      {
+        "promptId": "math_02",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "To evaluate the expression, I'll follow the order of operations (PEMDAS):\n\n1. Divide 144 by 12: 144 ÷ 12 = 12\n2. Multiply 7 by 9: 7 × 9 = 63\n3. Add the results: 12 + 63 = 75\n\nSo, the value of (144/12) + (7*9) is 75.",
+        "ttft_ms": 677,
+        "tps": 24.46,
+        "total_latency_ms": 4275,
+        "tokens_generated": 88,
+        "tokens_generated_whitespace": 49,
+        "prompt_tokens": 8,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "numeric_tolerance",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": 75
+          },
+          "raw_output": "To evaluate the expression, I'll follow the order of operations (PEMDAS):\n\n1. Divide 144 by 12: 144 ÷ 12 = 12\n2. Multiply 7 by 9: 7 × 9 = 63\n3. Add the results: 12 + 63 = 75\n\nSo, the value of (144/12) + (7*9) is 75."
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:42:30.719Z"
+      },
+      {
+        "promptId": "math_02",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We need to compute (144/12) + (7*9). 144/12 = 12. 7*9 = 63. Sum = 75. So answer: 75.\\( \\frac{144}{12} + (7 \\times 9) = 12 + 63 = 75 \\)",
+        "ttft_ms": 42625,
+        "tps": 109.18,
+        "total_latency_ms": 43257,
+        "tokens_generated": 79,
+        "tokens_generated_whitespace": 31,
+        "prompt_tokens": 85,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "numeric_tolerance",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": 75
+          },
+          "raw_output": "We need to compute (144/12) + (7*9). 144/12 = 12. 7*9 = 63. Sum = 75. So answer: 75.\\( \\frac{144}{12} + (7 \\times 9) = 12 + 63 = 75 \\)"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:43:13.975Z"
+      },
+      {
+        "promptId": "math_02",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks a simple arithmetic: (144/12) + (7*9). Compute: 144/12 = 12. 7*9 = 63. Sum = 75. Provide answer.The expression evaluates to:\n\n\\[\n\\frac{144}{12} + (7 \\times 9) = 12 + 63 = \\boxed{75}\n\\]",
+        "ttft_ms": 2636,
+        "tps": 145.19,
+        "total_latency_ms": 3187,
+        "tokens_generated": 90,
+        "tokens_generated_whitespace": 37,
+        "prompt_tokens": 85,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "numeric_tolerance",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": 75
+          },
+          "raw_output": "The user asks a simple arithmetic: (144/12) + (7*9). Compute: 144/12 = 12. 7*9 = 63. Sum = 75. Provide answer.The expression evaluates to:\n\n\\[\n\\frac{144}{12} + (7 \\times 9) = 12 + 63 = \\boxed{75}\n\\]"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:43:17.163Z"
+      },
+      {
+        "promptId": "json_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "{\"a\": 2, \"b\": [1, 2, 3], \"c\": \"ok\"}",
+        "ttft_ms": 712,
+        "tps": 30.53,
+        "total_latency_ms": 1498,
+        "tokens_generated": 24,
+        "tokens_generated_whitespace": 8,
+        "prompt_tokens": 19,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "json_schema",
+          "objective_score": 1,
+          "raw_expected": {
+            "a": 2,
+            "b": [
+              1,
+              2,
+              3
+            ],
+            "c": "ok"
+          },
+          "raw_output": "{\"a\": 2, \"b\": [1, 2, 3], \"c\": \"ok\"}"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:43:18.660Z"
+      },
+      {
+        "promptId": "json_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user wants a JSON object with keys a,b,c. a=2, b is array [1,2,3], c is string 'ok'. They want only valid JSON. So output:\n\n{\n  \"a\": 2,\n  \"b\": [1,2,3],\n  \"c\": \"ok\"\n}\n\nMake sure no extra keys. Ensure proper JSON.{\"a\":2,\"b\":[1,2,3],\"c\":\"ok\"}",
+        "ttft_ms": 536,
+        "tps": 112.03,
+        "total_latency_ms": 1384,
+        "tokens_generated": 105,
+        "tokens_generated_whitespace": 41,
+        "prompt_tokens": 101,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "json_schema",
+          "objective_score": 0,
+          "raw_expected": {
+            "a": 2,
+            "b": [
+              1,
+              2,
+              3
+            ],
+            "c": "ok"
+          },
+          "raw_output": "The user wants a JSON object with keys a,b,c. a=2, b is array [1,2,3], c is string 'ok'. They want only valid JSON. So output:\n\n{\n  \"a\": 2,\n  \"b\": [1,2,3],\n  \"c\": \"ok\"\n}\n\nMake sure no extra keys. Ensure proper JSON.{\"a\":2,\"b\":[1,2,3],\"c\":\"ok\"}"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:43:20.045Z"
+      },
+      {
+        "promptId": "json_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user wants a JSON with keys a,b,c where a=2, b is array [1,2,3], c is string 'ok'. Must return ONLY valid JSON. So output: {\"a\":2,\"b\":[1,2,3],\"c\":\"ok\"} Ensure no extra text.{\"a\":2,\"b\":[1,2,3],\"c\":\"ok\"}",
+        "ttft_ms": 1326,
+        "tps": 93.94,
+        "total_latency_ms": 2167,
+        "tokens_generated": 89,
+        "tokens_generated_whitespace": 30,
+        "prompt_tokens": 101,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "json_schema",
+          "objective_score": 0,
+          "raw_expected": {
+            "a": 2,
+            "b": [
+              1,
+              2,
+              3
+            ],
+            "c": "ok"
+          },
+          "raw_output": "The user wants a JSON with keys a,b,c where a=2, b is array [1,2,3], c is string 'ok'. Must return ONLY valid JSON. So output: {\"a\":2,\"b\":[1,2,3],\"c\":\"ok\"} Ensure no extra text.{\"a\":2,\"b\":[1,2,3],\"c\":\"ok\"}"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:43:22.212Z"
+      },
+      {
+        "promptId": "json_02",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "{\"items\": [{\"name\": \"pen\", \"qty\": 2}, {\"name\": \"book\", \"qty\": 1}], \"total_qty\": 3}",
+        "ttft_ms": 1455,
+        "tps": 29.04,
+        "total_latency_ms": 2626,
+        "tokens_generated": 34,
+        "tokens_generated_whitespace": 11,
+        "prompt_tokens": 12,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "json_schema",
+          "objective_score": 1,
+          "raw_expected": {
+            "items": [
+              {
+                "name": "pen",
+                "qty": 2
+              },
+              {
+                "name": "book",
+                "qty": 1
+              }
+            ],
+            "total_qty": 3
+          },
+          "raw_output": "{\"items\": [{\"name\": \"pen\", \"qty\": 2}, {\"name\": \"book\", \"qty\": 1}], \"total_qty\": 3}"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:43:24.838Z"
+      },
+      {
+        "promptId": "json_02",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user says: \"Return ONLY JSON: { \"items\": [ {\"name\":\"pen\",\"qty\":2}, {\"name\":\"book\",\"qty\":1} ], \"total_qty\": 3 }\". They want the assistant to output only JSON. So we should output exactly that JSON. Ensure no extra text. The JSON should be valid. The user provided the JSON. We just output it. Ensure no formatting or explanation.{\"items\":[{\"name\":\"pen\",\"qty\":2},{\"name\":\"book\",\"qty\":1}],\"total_qty\":3}",
+        "ttft_ms": 41290,
+        "tps": 112.68,
+        "total_latency_ms": 42284,
+        "tokens_generated": 122,
+        "tokens_generated_whitespace": 53,
+        "prompt_tokens": 104,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "json_schema",
+          "objective_score": 0,
+          "raw_expected": {
+            "items": [
+              {
+                "name": "pen",
+                "qty": 2
+              },
+              {
+                "name": "book",
+                "qty": 1
+              }
+            ],
+            "total_qty": 3
+          },
+          "raw_output": "The user says: \"Return ONLY JSON: { \"items\": [ {\"name\":\"pen\",\"qty\":2}, {\"name\":\"book\",\"qty\":1} ], \"total_qty\": 3 }\". They want the assistant to output only JSON. So we should output exactly that JSON. Ensure no extra text. The JSON should be valid. The user provided the JSON. We just output it. Ensure no formatting or explanation.{\"items\":[{\"name\":\"pen\",\"qty\":2},{\"name\":\"book\",\"qty\":1}],\"total_qty\":3}"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:44:07.122Z"
+      },
+      {
+        "promptId": "json_02",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks: \"Return ONLY JSON: { \"items\": [ {\"name\":\"pen\",\"qty\":2}, {\"name\":\"book\",\"qty\":1} ], \"total_qty\": 3 }\". So they want the JSON output exactly. We should comply. Provide only JSON, no extra text. Ensure it's exactly as requested. Probably they want the JSON object. We'll output that.{\n  \"items\": [\n    {\n      \"name\": \"pen\",\n      \"qty\": 2\n    },\n    {\n      \"name\": \"book\",\n      \"qty\": 1\n    }\n  ],\n  \"total_qty\": 3\n}",
+        "ttft_ms": 3083,
+        "tps": 75.29,
+        "total_latency_ms": 4823,
+        "tokens_generated": 141,
+        "tokens_generated_whitespace": 63,
+        "prompt_tokens": 104,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "json_schema",
+          "objective_score": 0,
+          "raw_expected": {
+            "items": [
+              {
+                "name": "pen",
+                "qty": 2
+              },
+              {
+                "name": "book",
+                "qty": 1
+              }
+            ],
+            "total_qty": 3
+          },
+          "raw_output": "The user asks: \"Return ONLY JSON: { \"items\": [ {\"name\":\"pen\",\"qty\":2}, {\"name\":\"book\",\"qty\":1} ], \"total_qty\": 3 }\". So they want the JSON output exactly. We should comply. Provide only JSON, no extra text. Ensure it's exactly as requested. Probably they want the JSON object. We'll output that.{\n  \"items\": [\n    {\n      \"name\": \"pen\",\n      \"qty\": 2\n    },\n    {\n      \"name\": \"book\",\n      \"qty\": 1\n    }\n  ],\n  \"total_qty\": 3\n}"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:44:11.946Z"
+      },
+      {
+        "promptId": "extract_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "varesh.patel@rutgers.edu",
+        "ttft_ms": 662,
+        "tps": 30.77,
+        "total_latency_ms": 922,
+        "tokens_generated": 8,
+        "tokens_generated_whitespace": 1,
+        "prompt_tokens": 13,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "regex",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": "varesh.patel@rutgers.edu",
+            "regex": "^[A-Za-z0-9._%+\\-]+@[A-Za-z0-9.\\-]+\\.[A-Za-z]{2,}$"
+          },
+          "raw_output": "varesh.patel@rutgers.edu"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:44:12.868Z"
+      },
+      {
+        "promptId": "extract_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user wants to extract the email from the given string: 'Contact me at varesh.patel@rutgers.edu thanks'. They want only the email. So output: varesh.patel@rutgers.edu.varesh.patel@rutgers.edu",
+        "ttft_ms": 730,
+        "tps": 144.44,
+        "total_latency_ms": 1090,
+        "tokens_generated": 62,
+        "tokens_generated_whitespace": 24,
+        "prompt_tokens": 93,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "regex",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "varesh.patel@rutgers.edu",
+            "regex": "^[A-Za-z0-9._%+\\-]+@[A-Za-z0-9.\\-]+\\.[A-Za-z]{2,}$"
+          },
+          "raw_output": "The user wants to extract the email from the given string: 'Contact me at varesh.patel@rutgers.edu thanks'. They want only the email. So output: varesh.patel@rutgers.edu.varesh.patel@rutgers.edu"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:44:13.958Z"
+      },
+      {
+        "promptId": "extract_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user wants to extract email from a string. Provide only the email. The email is varesh.patel@rutgers.edu. Return only that.varesh.patel@rutgers.edu",
+        "ttft_ms": 1233,
+        "tps": 59.09,
+        "total_latency_ms": 1893,
+        "tokens_generated": 49,
+        "tokens_generated_whitespace": 20,
+        "prompt_tokens": 93,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "regex",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "varesh.patel@rutgers.edu",
+            "regex": "^[A-Za-z0-9._%+\\-]+@[A-Za-z0-9.\\-]+\\.[A-Za-z]{2,}$"
+          },
+          "raw_output": "The user wants to extract email from a string. Provide only the email. The email is varesh.patel@rutgers.edu. Return only that.varesh.patel@rutgers.edu"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:44:15.851Z"
+      },
+      {
+        "promptId": "extract_02",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "makes",
+        "ttft_ms": 655,
+        "tps": 30.3,
+        "total_latency_ms": 688,
+        "tokens_generated": 1,
+        "tokens_generated_whitespace": 1,
+        "prompt_tokens": 15,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "browsers"
+          },
+          "raw_output": "makes"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:44:16.539Z"
+      },
+      {
+        "promptId": "extract_02",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user says: \"Return the 3rd word in this sentence: 'WebGPU makes browsers fast' Return only the word.\"\n\nWe need to parse the sentence: \"WebGPU makes browsers fast\". Words: 1: WebGPU, 2: makes, 3: browsers, 4: fast. So the 3rd word is \"browsers\". They want only the word. So output: browsers. No quotes, no punctuation. Just the word.browsers",
+        "ttft_ms": 566,
+        "tps": 118.2,
+        "total_latency_ms": 1412,
+        "tokens_generated": 110,
+        "tokens_generated_whitespace": 58,
+        "prompt_tokens": 91,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "browsers"
+          },
+          "raw_output": "The user says: \"Return the 3rd word in this sentence: 'WebGPU makes browsers fast' Return only the word.\"\n\nWe need to parse the sentence: \"WebGPU makes browsers fast\". Words: 1: WebGPU, 2: makes, 3: browsers, 4: fast. So the 3rd word is \"browsers\". They want only the word. So output: browsers. No quotes, no punctuation. Just the word.browsers"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:44:17.951Z"
+      },
+      {
+        "promptId": "extract_02",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks: \"Return the 3rd word in this sentence: 'WebGPU makes browsers fast' Return only the word.\"\n\nWe just need to output the third word: \"browsers\". The user wants only the word. So answer: browsers.browsers",
+        "ttft_ms": 519,
+        "tps": 50.54,
+        "total_latency_ms": 1627,
+        "tokens_generated": 66,
+        "tokens_generated_whitespace": 36,
+        "prompt_tokens": 91,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "browsers"
+          },
+          "raw_output": "The user asks: \"Return the 3rd word in this sentence: 'WebGPU makes browsers fast' Return only the word.\"\n\nWe just need to output the third word: \"browsers\". The user wants only the word. So answer: browsers.browsers"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:44:19.578Z"
+      },
+      {
+        "promptId": "code_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "7",
+        "ttft_ms": 671,
+        "tps": 31.25,
+        "total_latency_ms": 703,
+        "tokens_generated": 1,
+        "tokens_generated_whitespace": 1,
+        "prompt_tokens": 10,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": "7"
+          },
+          "raw_output": "7"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:44:20.281Z"
+      },
+      {
+        "promptId": "code_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user asks: \"In Python, what does len('Rutgers') return? Return only the number.\" So we need to output the number. 'Rutgers' has 7 letters. So len('Rutgers') returns 7. So answer: 7.7",
+        "ttft_ms": 510,
+        "tps": 176.66,
+        "total_latency_ms": 827,
+        "tokens_generated": 66,
+        "tokens_generated_whitespace": 31,
+        "prompt_tokens": 86,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "7"
+          },
+          "raw_output": "The user asks: \"In Python, what does len('Rutgers') return? Return only the number.\" So we need to output the number. 'Rutgers' has 7 letters. So len('Rutgers') returns 7. So answer: 7.7"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:44:21.109Z"
+      },
+      {
+        "promptId": "code_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks: \"In Python, what does len('Rutgers') return? Return only the number.\" So we need to output just the number. The length of the string 'Rutgers' is 7 characters. So answer: 7.7",
+        "ttft_ms": 48422,
+        "tps": 6.34,
+        "total_latency_ms": 56629,
+        "tokens_generated": 62,
+        "tokens_generated_whitespace": 33,
+        "prompt_tokens": 86,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "7"
+          },
+          "raw_output": "The user asks: \"In Python, what does len('Rutgers') return? Return only the number.\" So we need to output just the number. The length of the string 'Rutgers' is 7 characters. So answer: 7.7"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:45:17.739Z"
+      },
+      {
+        "promptId": "code_02",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "s.toLowerCase()",
+        "ttft_ms": 1345,
+        "tps": 31.25,
+        "total_latency_ms": 1441,
+        "tokens_generated": 3,
+        "tokens_generated_whitespace": 1,
+        "prompt_tokens": 15,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "regex",
+          "objective_score": 1,
+          "raw_expected": {
+            "regex": [
+              "^s\\.toLowerCase\\(\\);?$",
+              "^s\\.toLocaleLowerCase\\(\\);?$"
+            ]
+          },
+          "raw_output": "s.toLowerCase()"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:45:19.180Z"
+      },
+      {
+        "promptId": "code_02",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user wants a single-line JavaScript expression that converts string s to lowercase. Return only the code. So just something like s.toLowerCase(). But maybe they want to assign? They said \"converts string s to lowercase\". So expression: s.toLowerCase(). That's it. Return only the code. So output: s.toLowerCase()s.toLowerCase()",
+        "ttft_ms": 1518,
+        "tps": 114.8,
+        "total_latency_ms": 2180,
+        "tokens_generated": 86,
+        "tokens_generated_whitespace": 47,
+        "prompt_tokens": 88,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "regex",
+          "objective_score": 0,
+          "raw_expected": {
+            "regex": [
+              "^s\\.toLowerCase\\(\\);?$",
+              "^s\\.toLocaleLowerCase\\(\\);?$"
+            ]
+          },
+          "raw_output": "The user wants a single-line JavaScript expression that converts string s to lowercase. Return only the code. So just something like s.toLowerCase(). But maybe they want to assign? They said \"converts string s to lowercase\". So expression: s.toLowerCase(). That's it. Return only the code. So output: s.toLowerCase()s.toLowerCase()"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:45:21.359Z"
+      },
+      {
+        "promptId": "code_02",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks: \"Write a single-line JavaScript expression that converts string s to lowercase. Return ONLY the code.\"\n\nWe need to output just the code, no extra text. The expression: s.toLowerCase().\n\nThus answer: s.toLowerCase().\n\nMake sure it's a single line, just the code.s.toLowerCase()",
+        "ttft_ms": 9347,
+        "tps": 21.45,
+        "total_latency_ms": 12611,
+        "tokens_generated": 80,
+        "tokens_generated_whitespace": 43,
+        "prompt_tokens": 88,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "regex",
+          "objective_score": 0,
+          "raw_expected": {
+            "regex": [
+              "^s\\.toLowerCase\\(\\);?$",
+              "^s\\.toLocaleLowerCase\\(\\);?$"
+            ]
+          },
+          "raw_output": "The user asks: \"Write a single-line JavaScript expression that converts string s to lowercase. Return ONLY the code.\"\n\nWe need to output just the code, no extra text. The expression: s.toLowerCase().\n\nThus answer: s.toLowerCase().\n\nMake sure it's a single line, just the code.s.toLowerCase()"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:45:33.972Z"
+      },
+      {
+        "promptId": "logic_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "YES.",
+        "ttft_ms": 725,
+        "tps": 28.57,
+        "total_latency_ms": 795,
+        "tokens_generated": 2,
+        "tokens_generated_whitespace": 1,
+        "prompt_tokens": 20,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "YES"
+          },
+          "raw_output": "YES."
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:45:34.770Z"
+      },
+      {
+        "promptId": "logic_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We have a logic problem: If all bloops are razzies and all razzies are lazzies, are all bloops definitely lazzies? This is a transitive property: If A ⊆ B and B ⊆ C, then A ⊆ C. So yes, all bloops are lazzies. So answer: YES.YES",
+        "ttft_ms": 480,
+        "tps": 73.49,
+        "total_latency_ms": 1487,
+        "tokens_generated": 87,
+        "tokens_generated_whitespace": 46,
+        "prompt_tokens": 102,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "YES"
+          },
+          "raw_output": "We have a logic problem: If all bloops are razzies and all razzies are lazzies, are all bloops definitely lazzies? This is a transitive property: If A ⊆ B and B ⊆ C, then A ⊆ C. So yes, all bloops are lazzies. So answer: YES.YES"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:45:36.258Z"
+      },
+      {
+        "promptId": "logic_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks a logical syllogism: If all B are R, and all R are L, then all B are L. That's true. So answer YES. They ask answer only YES or NO. So respond with YES.YES",
+        "ttft_ms": 540,
+        "tps": 6.52,
+        "total_latency_ms": 7745,
+        "tokens_generated": 58,
+        "tokens_generated_whitespace": 37,
+        "prompt_tokens": 102,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "YES"
+          },
+          "raw_output": "The user asks a logical syllogism: If all B are R, and all R are L, then all B are L. That's true. So answer YES. They ask answer only YES or NO. So respond with YES.YES"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:45:44.004Z"
+      },
+      {
+        "promptId": "instruction_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "EDGE",
+        "ttft_ms": 699,
+        "tps": 20.41,
+        "total_latency_ms": 748,
+        "tokens_generated": 1,
+        "tokens_generated_whitespace": 1,
+        "prompt_tokens": 9,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": "EDGE"
+          },
+          "raw_output": "EDGE"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:45:44.751Z"
+      },
+      {
+        "promptId": "instruction_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user says: \"Answer with exactly: 'EDGE' (no quotes, no extra text).\" So we must output exactly the word EDGE, no quotes, no extra text.EDGE",
+        "ttft_ms": 23002,
+        "tps": 97.11,
+        "total_latency_ms": 23383,
+        "tokens_generated": 47,
+        "tokens_generated_whitespace": 25,
+        "prompt_tokens": 84,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "EDGE"
+          },
+          "raw_output": "The user says: \"Answer with exactly: 'EDGE' (no quotes, no extra text).\" So we must output exactly the word EDGE, no quotes, no extra text.EDGE"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:46:08.137Z"
+      },
+      {
+        "promptId": "instruction_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks: \"Answer with exactly: 'EDGE' (no quotes, no extra text).\" So we must output exactly EDGE, no quotes, no extra text. Ensure no extra whitespace? Probably just \"EDGE\".EDGE",
+        "ttft_ms": 28980,
+        "tps": 32.1,
+        "total_latency_ms": 30382,
+        "tokens_generated": 55,
+        "tokens_generated_whitespace": 30,
+        "prompt_tokens": 84,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "EDGE"
+          },
+          "raw_output": "The user asks: \"Answer with exactly: 'EDGE' (no quotes, no extra text).\" So we must output exactly EDGE, no quotes, no extra text. Ensure no extra whitespace? Probably just \"EDGE\".EDGE"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:46:38.524Z"
+      },
+      {
+        "promptId": "instruction_02",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "A,B,C",
+        "ttft_ms": 702,
+        "tps": 30.93,
+        "total_latency_ms": 799,
+        "tokens_generated": 3,
+        "tokens_generated_whitespace": 1,
+        "prompt_tokens": 8,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": "A,B,C"
+          },
+          "raw_output": "A,B,C"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:46:39.326Z"
+      },
+      {
+        "promptId": "instruction_02",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user says: \"Return ONLY the string 'A,B,C' with no spaces.\" So we need to output exactly: A,B,C. No spaces. No quotes. Just that string.A,B,C",
+        "ttft_ms": 3087,
+        "tps": 104.48,
+        "total_latency_ms": 3489,
+        "tokens_generated": 52,
+        "tokens_generated_whitespace": 25,
+        "prompt_tokens": 82,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "A,B,C"
+          },
+          "raw_output": "The user says: \"Return ONLY the string 'A,B,C' with no spaces.\" So we need to output exactly: A,B,C. No spaces. No quotes. Just that string.A,B,C"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:46:42.815Z"
+      },
+      {
+        "promptId": "instruction_02",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks: \"Return ONLY the string 'A,B,C' with no spaces.\" So we just output A,B,C. No extra formatting.A,B,C",
+        "ttft_ms": 15294,
+        "tps": 32.32,
+        "total_latency_ms": 16315,
+        "tokens_generated": 43,
+        "tokens_generated_whitespace": 19,
+        "prompt_tokens": 82,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "exact",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": "A,B,C"
+          },
+          "raw_output": "The user asks: \"Return ONLY the string 'A,B,C' with no spaces.\" So we just output A,B,C. No extra formatting.A,B,C"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:46:59.130Z"
+      },
+      {
+        "promptId": "math_03",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "1024",
+        "ttft_ms": 694,
+        "tps": 31.25,
+        "total_latency_ms": 758,
+        "tokens_generated": 2,
+        "tokens_generated_whitespace": 1,
+        "prompt_tokens": 7,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "numeric_tolerance",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": 1024
+          },
+          "raw_output": "1024"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:46:59.889Z"
+      },
+      {
+        "promptId": "math_03",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user asks: \"What is 2^10? Return only the number.\" So answer: 1024.1024",
+        "ttft_ms": 447,
+        "tps": 122.64,
+        "total_latency_ms": 659,
+        "tokens_generated": 36,
+        "tokens_generated_whitespace": 13,
+        "prompt_tokens": 81,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0,
+        "scoring_details": {
+          "method": "numeric_tolerance",
+          "objective_score": 0,
+          "raw_expected": {
+            "value": 1024
+          },
+          "raw_output": "The user asks: \"What is 2^10? Return only the number.\" So answer: 1024.1024"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:47:00.547Z"
+      },
+      {
+        "promptId": "math_03",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks: \"What is 2^10? Return only the number.\" So answer is 1024. Must return only the number.1024",
+        "ttft_ms": 33882,
+        "tps": 23.9,
+        "total_latency_ms": 35221,
+        "tokens_generated": 42,
+        "tokens_generated_whitespace": 19,
+        "prompt_tokens": 81,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 1,
+        "scoring_details": {
+          "method": "numeric_tolerance",
+          "objective_score": 1,
+          "raw_expected": {
+            "value": 1024
+          },
+          "raw_output": "The user asks: \"What is 2^10? Return only the number.\" So answer is 1024. Must return only the number.1024"
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:47:35.770Z"
+      },
+      {
+        "promptId": "summarize_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "Large Language Models (LLMs) can be run directly in a web browser using WebGPU, which can improve performance and reduce latency while also enhancing user privacy. However, this approach may also introduce limitations on memory and computational resources, potentially affecting the quality of the LLM's output.",
+        "ttft_ms": 707,
+        "tps": 30.03,
+        "total_latency_ms": 2605,
+        "tokens_generated": 57,
+        "tokens_generated_whitespace": 46,
+        "prompt_tokens": 25,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.25,
+        "scoring_details": {
+          "method": "embedding+judge",
+          "raw_output": "Large Language Models (LLMs) can be run directly in a web browser using WebGPU, which can improve performance and reduce latency while also enhancing user privacy. However, this approach may also introduce limitations on memory and computational resources, potentially affecting the quality of the LLM's output.",
+          "embedding_score": 0,
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.25
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:47:38.378Z"
+      },
+      {
+        "promptId": "summarize_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We need to summarize in 2 sentences. The content: LLMs can run in the browser using WebGPU, reducing latency and improving privacy, but memory and compute limits may reduce quality. Summarize in 2 sentences. So maybe: \"Large language models can be executed directly in the browser via WebGPU, which cuts latency and enhances privacy. However, the limited memory and computational resources of browsers can compromise model quality.\" That's 2 sentences. Ensure it's concise.Large language models can run directly in the browser using WebGPU, cutting latency and boosting privacy by keeping data local. Yet the limited memory and compute resources of browsers can degrade the model’s performance and output quality.",
+        "ttft_ms": 1435,
+        "tps": 113.21,
+        "total_latency_ms": 2654,
+        "tokens_generated": 148,
+        "tokens_generated_whitespace": 109,
+        "prompt_tokens": 104,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.25,
+        "scoring_details": {
+          "method": "embedding+judge",
+          "raw_output": "We need to summarize in 2 sentences. The content: LLMs can run in the browser using WebGPU, reducing latency and improving privacy, but memory and compute limits may reduce quality. Summarize in 2 sentences. So maybe: \"Large language models can be executed directly in the browser via WebGPU, which cuts latency and enhances privacy. However, the limited memory and computational resources of browsers can compromise model quality.\" That's 2 sentences. Ensure it's concise.Large language models can run directly in the browser using WebGPU, cutting latency and boosting privacy by keeping data local. Yet the limited memory and compute resources of browsers can degrade the model’s performance and output quality.",
+          "embedding_score": 0,
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.25
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:47:41.032Z"
+      },
+      {
+        "promptId": "summarize_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user wants a 2-sentence summary of the given statement. Provide concise summary.LLMs can be executed directly in the browser via WebGPU, which cuts latency and enhances privacy by keeping data local. However, the browser’s memory and compute constraints can limit model size and degrade output quality.",
+        "ttft_ms": 1309,
+        "tps": 51.06,
+        "total_latency_ms": 2484,
+        "tokens_generated": 70,
+        "tokens_generated_whitespace": 47,
+        "prompt_tokens": 104,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.25,
+        "scoring_details": {
+          "method": "embedding+judge",
+          "raw_output": "The user wants a 2-sentence summary of the given statement. Provide concise summary.LLMs can be executed directly in the browser via WebGPU, which cuts latency and enhances privacy by keeping data local. However, the browser’s memory and compute constraints can limit model size and degrade output quality.",
+          "embedding_score": 0,
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.25
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:47:43.517Z"
+      },
+      {
+        "promptId": "reasoning_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "To maximize total time saved, I would outsource the 10-minute and 20-minute tasks. This is because the 10-minute task has the shortest duration, and the 20-minute task has the next shortest duration. By outsourcing these two tasks, I would save a total of 30 minutes.",
+        "ttft_ms": 6435,
+        "tps": 20.23,
+        "total_latency_ms": 9451,
+        "tokens_generated": 61,
+        "tokens_generated_whitespace": 45,
+        "prompt_tokens": 26,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "To maximize total time saved, I would outsource the 10-minute and 20-minute tasks. This is because the 10-minute task has the shortest duration, and the 20-minute task has the next shortest duration. By outsourcing these two tasks, I would save a total of 30 minutes.",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:47:52.969Z"
+      },
+      {
+        "promptId": "reasoning_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We need to interpret the question: \"You have 3 tasks that take 10, 20, 30 minutes. If you can only do two, which two maximize total time saved if outsourcing? Explain briefly.\"\n\nWe have 3 tasks: 10, 20, 30 minutes. If you can only do two, which two maximize total time saved if outsourcing? So you can outsource one task. Which one to outsource to maximize time saved? The time saved is the time you don't have to do. So you want to outsource the longest task: 30 minutes. So you do the 10 and 20 tasks yourself, outsource the 30. That saves 30 minutes. So answer: outsource the 30-minute task. Explanation: because you want to maximize time saved, choose the longest. So the two you do are 10 and 20. So total time saved is 30 minutes. Provide brief explanation.**Outsource the 30‑minute task.**  \nDoing the 10‑ and 20‑minute tasks yourself leaves the 30‑minute job to be outsourced, which saves you the most time—30 minutes. The two tasks you keep are the shorter ones (10 min",
+        "ttft_ms": 505,
+        "tps": 115.91,
+        "total_latency_ms": 2636,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 176,
+        "prompt_tokens": 105,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "We need to interpret the question: \"You have 3 tasks that take 10, 20, 30 minutes. If you can only do two, which two maximize total time saved if outsourcing? Explain briefly.\"\n\nWe have 3 tasks: 10, 20, 30 minutes. If you can only do two, which two maximize total time saved if outsourcing? So you can outsource one task. Which one to outsource to maximize time saved? The time saved is the time you don't have to do. So you want to outsource the longest task: 30 minutes. So you do the 10 and 20 tasks yourself, outsource the 30. That saves 30 minutes. So answer: outsource the 30-minute task. Explanation: because you want to maximize time saved, choose the longest. So the two you do are 10 and 20. So total time saved is 30 minutes. Provide brief explanation.**Outsource the 30‑minute task.**  \nDoing the 10‑ and 20‑minute tasks yourself leaves the 30‑minute job to be outsourced, which saves you the most time—30 minutes. The two tasks you keep are the shorter ones (10 min",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:47:55.605Z"
+      },
+      {
+        "promptId": "reasoning_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "We need to answer: three tasks durations 10,20,30 minutes. Can only do two tasks yourself, outsource the third. Which two maximize total time saved? Actually \"total time saved if outsourcing\" means we want to outsource the longest task to save the most time? Wait: If you can only do two tasks, you will do two yourself, outsource the third. The total time saved by outsourcing is the duration of the outsourced task (since you don't spend that time). To maximize time saved, outsource the longest task (30 minutes). So you do the 10 and 20 minute tasks, outsource the 30 minute one. Total time saved = 30 minutes. Brief explanation.The three tasks take **10 min**, **20 min**, and **30 min**.\n\nSince you can only handle two tasks yourself, the third task will be outsourced.  \nThe “time saved” by outsourcing is simply the duration of the task you don’t have to do yourself. To maximize that saved time, you should outsource the **longest** task.\n\n**Choose to do:** the 10‑minute and 20‑minute tasks.  \n**Outsource:** the 30‑minute task.\n\n**Total",
+        "ttft_ms": 1194,
+        "tps": 76.19,
+        "total_latency_ms": 4436,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 176,
+        "prompt_tokens": 105,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "We need to answer: three tasks durations 10,20,30 minutes. Can only do two tasks yourself, outsource the third. Which two maximize total time saved? Actually \"total time saved if outsourcing\" means we want to outsource the longest task to save the most time? Wait: If you can only do two tasks, you will do two yourself, outsource the third. The total time saved by outsourcing is the duration of the outsourced task (since you don't spend that time). To maximize time saved, outsource the longest task (30 minutes). So you do the 10 and 20 minute tasks, outsource the 30 minute one. Total time saved = 30 minutes. Brief explanation.The three tasks take **10 min**, **20 min**, and **30 min**.\n\nSince you can only handle two tasks yourself, the third task will be outsourced.  \nThe “time saved” by outsourcing is simply the duration of the task you don’t have to do yourself. To maximize that saved time, you should outsource the **longest** task.\n\n**Choose to do:** the 10‑minute and 20‑minute tasks.  \n**Outsource:** the 30‑minute task.\n\n**Total",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:48:00.041Z"
+      },
+      {
+        "promptId": "reasoning_02",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "TTFT (Take The First Thing) and TPS (Take The Path of Shortest) are two productivity techniques. TTFT involves taking the first task that comes to mind and tackling it, without overthinking or prioritizing. TPS, on the other hand, involves identifying the most important or urgent task and focusing on that first. For example, if you have a to-do list with tasks like \"pay bills\", \"clean the house\", and \"write a report\", TTFT would mean starting with \"pay bills\" because it's the first thing that comes to mind, while TPS would mean starting with \"write a report\" because it's the most important or urgent task.",
+        "ttft_ms": 7777,
+        "tps": 19.83,
+        "total_latency_ms": 14787,
+        "tokens_generated": 139,
+        "tokens_generated_whitespace": 104,
+        "prompt_tokens": 11,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "TTFT (Take The First Thing) and TPS (Take The Path of Shortest) are two productivity techniques. TTFT involves taking the first task that comes to mind and tackling it, without overthinking or prioritizing. TPS, on the other hand, involves identifying the most important or urgent task and focusing on that first. For example, if you have a to-do list with tasks like \"pay bills\", \"clean the house\", and \"write a report\", TTFT would mean starting with \"pay bills\" because it's the first thing that comes to mind, while TPS would mean starting with \"write a report\" because it's the most important or urgent task.",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unterminated string in JSON at position 233 (line 1 column 234)"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:48:14.827Z"
+      },
+      {
+        "promptId": "reasoning_02",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We need to explain TTFT vs TPS in one short paragraph, with an example. TTFT likely stands for Time To First Transaction? Or Time To First Transaction? Actually TTFT could be \"Time to First Transaction\" or \"Time to First Transaction\" in a system. TPS is Transactions Per Second. So we need to explain difference: TTFT measures latency from start to first transaction, while TPS measures throughput. Provide example: e.g., a web service: TTFT 200ms, TPS 500. Or a database: TTFT 1s, TPS 1000. Provide short paragraph. Let's produce.TTFT (Time‑to‑First‑Transaction) measures how long it takes a system to process its first request after a start‑up or a reset, essentially a latency metric, while TPS (Transactions‑Per‑Second) measures the steady‑state throughput—the number of requests the system can handle in a second. For example, a new web server might boot up, take 300 ms to serve its first HTTP request (TTFT = 300 ms), but once warmed up it can handle 1,200 requests per second (TPS = 1,200 TPS). Thus",
+        "ttft_ms": 2615,
+        "tps": 161.86,
+        "total_latency_ms": 4141,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 166,
+        "prompt_tokens": 83,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "We need to explain TTFT vs TPS in one short paragraph, with an example. TTFT likely stands for Time To First Transaction? Or Time To First Transaction? Actually TTFT could be \"Time to First Transaction\" or \"Time to First Transaction\" in a system. TPS is Transactions Per Second. So we need to explain difference: TTFT measures latency from start to first transaction, while TPS measures throughput. Provide example: e.g., a web service: TTFT 200ms, TPS 500. Or a database: TTFT 1s, TPS 1000. Provide short paragraph. Let's produce.TTFT (Time‑to‑First‑Transaction) measures how long it takes a system to process its first request after a start‑up or a reset, essentially a latency metric, while TPS (Transactions‑Per‑Second) measures the steady‑state throughput—the number of requests the system can handle in a second. For example, a new web server might boot up, take 300 ms to serve its first HTTP request (TTFT = 300 ms), but once warmed up it can handle 1,200 requests per second (TPS = 1,200 TPS). Thus",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:48:18.969Z"
+      },
+      {
+        "promptId": "reasoning_02",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks: \"Explain TTFT vs TPS in one short paragraph, with an example.\" Likely TTFT = Time To First Token, TPS = Tokens Per Second. Provide concise explanation. Should be short paragraph, include example. No disallowed content. Provide answer.TTFT (Time‑to‑First‑Token) measures how long it takes a model to start streaming its output after receiving a prompt, while TPS (Tokens‑Per‑Second) measures the steady‑state generation speed once the model is producing tokens. For example, if a 2‑second pause occurs before the model emits its first word (“Hello”) and then it continues to output 5 tokens each second thereafter, the TTFT is 2 s and the TPS is 5 tokens/s. This distinction matters: a low TTFT makes the system feel responsive, whereas a high TPS determines how quickly long responses are completed.",
+        "ttft_ms": 1010,
+        "tps": 73.87,
+        "total_latency_ms": 3501,
+        "tokens_generated": 194,
+        "tokens_generated_whitespace": 130,
+        "prompt_tokens": 83,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user asks: \"Explain TTFT vs TPS in one short paragraph, with an example.\" Likely TTFT = Time To First Token, TPS = Tokens Per Second. Provide concise explanation. Should be short paragraph, include example. No disallowed content. Provide answer.TTFT (Time‑to‑First‑Token) measures how long it takes a model to start streaming its output after receiving a prompt, while TPS (Tokens‑Per‑Second) measures the steady‑state generation speed once the model is producing tokens. For example, if a 2‑second pause occurs before the model emits its first word (“Hello”) and then it continues to output 5 tokens each second thereafter, the TTFT is 2 s and the TPS is 5 tokens/s. This distinction matters: a low TTFT makes the system feel responsive, whereas a high TPS determines how quickly long responses are completed.",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:48:22.471Z"
+      },
+      {
+        "promptId": "factual_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "Two reasons cloud LLM (Large Language Model) APIs can be problematic for privacy are:\n\n1. **Data Collection and Storage**: Cloud LLM APIs often require users to upload their data, such as text, audio, or other inputs, to the cloud for processing. This can lead to the collection and storage of sensitive information, which may be vulnerable to data breaches, unauthorized access, or other security risks.\n2. **Model Training and Data Sharing**: Cloud LLM APIs typically rely on large datasets to train and improve their models. These datasets may contain sensitive information, such as personal identifiable information (PII), financial data, or other confidential information. If not properly anonymized or de-identified, this data can be shared with third-party developers, researchers, or other entities, potentially compromising user privacy.\n\nThese concerns highlight the importance of carefully evaluating the privacy implications of using cloud LLM APIs and ensuring that adequate measures are in place to protect sensitive information.",
+        "ttft_ms": 701,
+        "tps": 22.07,
+        "total_latency_ms": 9400,
+        "tokens_generated": 192,
+        "tokens_generated_whitespace": 153,
+        "prompt_tokens": 11,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.6,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "Two reasons cloud LLM (Large Language Model) APIs can be problematic for privacy are:\n\n1. **Data Collection and Storage**: Cloud LLM APIs often require users to upload their data, such as text, audio, or other inputs, to the cloud for processing. This can lead to the collection and storage of sensitive information, which may be vulnerable to data breaches, unauthorized access, or other security risks.\n2. **Model Training and Data Sharing**: Cloud LLM APIs typically rely on large datasets to train and improve their models. These datasets may contain sensitive information, such as personal identifiable information (PII), financial data, or other confidential information. If not properly anonymized or de-identified, this data can be shared with third-party developers, researchers, or other entities, potentially compromising user privacy.\n\nThese concerns highlight the importance of carefully evaluating the privacy implications of using cloud LLM APIs and ensuring that adequate measures are in place to protect sensitive information.",
+          "judge_score": 0.6,
+          "judge_reasons": [
+            "Data Collection and Storage",
+            "Model Training and Data Sharing"
+          ],
+          "objective_score": 0.6
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:48:31.871Z"
+      },
+      {
+        "promptId": "factual_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user asks: \"Name two reasons cloud LLM APIs can be problematic for privacy.\" They want two reasons. Likely: data sent to third party, potential data leakage, lack of control over data, compliance issues, data retention, model training on user data, etc. Provide concise answer.1. **Uncontrolled Data Exposure** – When you send prompts and responses to a cloud LLM, the text (including any sensitive or personal information) travels over the internet to a third‑party server. That data may be logged, monitored, or inadvertently shared with other users or services, creating a risk that private information is exposed beyond your intended audience.\n\n2. **Unknown Data Retention & Training Practices** – Cloud providers often retain request data for a period and may use it to improve or fine‑tune their models. Even if you delete your data locally, the provider might still keep copies, meaning your private content could be incorporated into future model training, potentially leaking it in downstream outputs.",
+        "ttft_ms": 7854,
+        "tps": 113.95,
+        "total_latency_ms": 9618,
+        "tokens_generated": 211,
+        "tokens_generated_whitespace": 158,
+        "prompt_tokens": 82,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user asks: \"Name two reasons cloud LLM APIs can be problematic for privacy.\" They want two reasons. Likely: data sent to third party, potential data leakage, lack of control over data, compliance issues, data retention, model training on user data, etc. Provide concise answer.1. **Uncontrolled Data Exposure** – When you send prompts and responses to a cloud LLM, the text (including any sensitive or personal information) travels over the internet to a third‑party server. That data may be logged, monitored, or inadvertently shared with other users or services, creating a risk that private information is exposed beyond your intended audience.\n\n2. **Unknown Data Retention & Training Practices** – Cloud providers often retain request data for a period and may use it to improve or fine‑tune their models. Even if you delete your data locally, the provider might still keep copies, meaning your private content could be incorporated into future model training, potentially leaking it in downstream outputs.",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:48:41.490Z"
+      },
+      {
+        "promptId": "factual_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks: \"Name two reasons cloud LLM APIs can be problematic for privacy.\" This is a straightforward request for two reasons. It's not disallowed. It's not providing disallowed content. So we can comply. Provide two reasons.Sure! Here are two common privacy concerns when using cloud‑based LLM APIs:\n\n1. **Data Exposure to the Service Provider**  \n   When you send prompts (and any included context or user data) to a cloud LLM, that information is transmitted to and stored on the provider’s servers. Even if the provider claims not to retain the data, the raw text still passes through their infrastructure, giving the provider (or anyone who gains access to it) the ability to view, log, or analyze the content. This can be problematic for any sensitive or personally identifiable information (PII) you don’t want to expose outside your organization.\n\n2. **Potential for Unintended Model Memorization and Leakage**  \n   Large language models can inadvertently memorize fragments of the data they are trained on or that they process during inference. If a model is later queried (by you or by another user of the same service), it might regurgitate parts of the original input, effectively leaking private",
+        "ttft_ms": 426,
+        "tps": 111.87,
+        "total_latency_ms": 2634,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 193,
+        "prompt_tokens": 82,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user asks: \"Name two reasons cloud LLM APIs can be problematic for privacy.\" This is a straightforward request for two reasons. It's not disallowed. It's not providing disallowed content. So we can comply. Provide two reasons.Sure! Here are two common privacy concerns when using cloud‑based LLM APIs:\n\n1. **Data Exposure to the Service Provider**  \n   When you send prompts (and any included context or user data) to a cloud LLM, that information is transmitted to and stored on the provider’s servers. Even if the provider claims not to retain the data, the raw text still passes through their infrastructure, giving the provider (or anyone who gains access to it) the ability to view, log, or analyze the content. This can be problematic for any sensitive or personally identifiable information (PII) you don’t want to expose outside your organization.\n\n2. **Potential for Unintended Model Memorization and Leakage**  \n   Large language models can inadvertently memorize fragments of the data they are trained on or that they process during inference. If a model is later queried (by you or by another user of the same service), it might regurgitate parts of the original input, effectively leaking private",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:48:44.124Z"
+      },
+      {
+        "promptId": "instruction_following_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "Here are 4 evaluation metrics for comparing edge vs cloud LLMs:\n\n* **Latency**: The time it takes for the LLM to respond to a query or request, which is critical for edge LLMs that need to operate in real-time.\n* **Model Size and Complexity**: The size and complexity of the LLM model, which affects the computational resources required to run it on edge devices versus the cloud.\n* **Energy Efficiency**: The amount of energy consumed by the edge device or cloud infrastructure to run the LLM, which is important for battery-powered edge devices or data centers with energy constraints.\n* **Offline Capability**: The ability of the edge LLM to operate without an internet connection, which is essential for edge devices that need to function in areas with limited or no connectivity.",
+        "ttft_ms": 701,
+        "tps": 21.44,
+        "total_latency_ms": 8162,
+        "tokens_generated": 160,
+        "tokens_generated_whitespace": 131,
+        "prompt_tokens": 14,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "Here are 4 evaluation metrics for comparing edge vs cloud LLMs:\n\n* **Latency**: The time it takes for the LLM to respond to a query or request, which is critical for edge LLMs that need to operate in real-time.\n* **Model Size and Complexity**: The size and complexity of the LLM model, which affects the computational resources required to run it on edge devices versus the cloud.\n* **Energy Efficiency**: The amount of energy consumed by the edge device or cloud infrastructure to run the LLM, which is important for battery-powered edge devices or data centers with energy constraints.\n* **Offline Capability**: The ability of the edge LLM to operate without an internet connection, which is essential for edge devices that need to function in areas with limited or no connectivity.",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:48:52.287Z"
+      },
+      {
+        "promptId": "instruction_following_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We need to produce a bulleted list of 4 evaluation metrics for comparing edge vs cloud LLMs. Edge vs cloud LLMs: metrics could be latency, throughput, model size, energy consumption, cost, accuracy, inference time, memory usage, network usage, privacy. The user wants 4 metrics. Provide a bulleted list. Probably mention: inference latency, throughput, model size, energy consumption. Or maybe accuracy, cost, latency, privacy. But we need 4. Provide a concise list. Let's produce a bulleted list.- **Inference latency** – the time from input to output, critical for real‑time edge applications.  \n- **Model size / memory footprint** – the amount of RAM/flash required to run the model, which determines feasibility on constrained devices.  \n- **Energy consumption / power draw** – the battery impact or thermal budget, especially important for mobile or IoT edge deployments.  \n- **Operational cost / bandwidth usage** – the cost of data transfer and cloud compute versus local inference, affecting long‑term sustainability.",
+        "ttft_ms": 12126,
+        "tps": 91.48,
+        "total_latency_ms": 14498,
+        "tokens_generated": 227,
+        "tokens_generated_whitespace": 154,
+        "prompt_tokens": 88,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "We need to produce a bulleted list of 4 evaluation metrics for comparing edge vs cloud LLMs. Edge vs cloud LLMs: metrics could be latency, throughput, model size, energy consumption, cost, accuracy, inference time, memory usage, network usage, privacy. The user wants 4 metrics. Provide a bulleted list. Probably mention: inference latency, throughput, model size, energy consumption. Or maybe accuracy, cost, latency, privacy. But we need 4. Provide a concise list. Let's produce a bulleted list.- **Inference latency** – the time from input to output, critical for real‑time edge applications.  \n- **Model size / memory footprint** – the amount of RAM/flash required to run the model, which determines feasibility on constrained devices.  \n- **Energy consumption / power draw** – the battery impact or thermal budget, especially important for mobile or IoT edge deployments.  \n- **Operational cost / bandwidth usage** – the cost of data transfer and cloud compute versus local inference, affecting long‑term sustainability.",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:06.786Z"
+      },
+      {
+        "promptId": "instruction_following_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user wants a bulleted list of 4 evaluation metrics for comparing edge vs cloud LLMs. Provide concise bullet points. Should be straightforward.- **Latency & Throughput** – Measure response time (ms) and tokens processed per second on the target hardware versus cloud inference endpoints.  \n- **Resource Utilization** – Track CPU/GPU/TPU usage, memory footprint, and power consumption to assess feasibility on edge devices.  \n- **Model Accuracy & Robustness** – Compare task‑specific performance (e.g., BLEU, F1, exact‑match) and resilience to distribution shift when the model is quantized or pruned for edge deployment.  \n- **Privacy & Data Sovereignty** – Evaluate the amount of user data that must be transmitted off‑device and compliance with regulations (e.g., GDPR, HIPAA) versus on‑device processing guarantees.",
+        "ttft_ms": 624,
+        "tps": 99.94,
+        "total_latency_ms": 2405,
+        "tokens_generated": 188,
+        "tokens_generated_whitespace": 118,
+        "prompt_tokens": 88,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user wants a bulleted list of 4 evaluation metrics for comparing edge vs cloud LLMs. Provide concise bullet points. Should be straightforward.- **Latency & Throughput** – Measure response time (ms) and tokens processed per second on the target hardware versus cloud inference endpoints.  \n- **Resource Utilization** – Track CPU/GPU/TPU usage, memory footprint, and power consumption to assess feasibility on edge devices.  \n- **Model Accuracy & Robustness** – Compare task‑specific performance (e.g., BLEU, F1, exact‑match) and resilience to distribution shift when the model is quantized or pruned for edge deployment.  \n- **Privacy & Data Sovereignty** – Evaluate the amount of user data that must be transmitted off‑device and compliance with regulations (e.g., GDPR, HIPAA) versus on‑device processing guarantees.",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unterminated string in JSON at position 22 (line 1 column 23)"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:09.195Z"
+      },
+      {
+        "promptId": "code_03",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "```python\ndef benchmark_ttft_tps(num_trials: int, ttft_threshold: float, tps_threshold: float, ttft_data: list, tps_data: list) -> tuple:\n```",
+        "ttft_ms": 711,
+        "tps": 27.87,
+        "total_latency_ms": 2218,
+        "tokens_generated": 42,
+        "tokens_generated_whitespace": 15,
+        "prompt_tokens": 18,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "```python\ndef benchmark_ttft_tps(num_trials: int, ttft_threshold: float, tps_threshold: float, ttft_data: list, tps_data: list) -> tuple:\n```",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:11.414Z"
+      },
+      {
+        "promptId": "code_03",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user wants a short Python function signature (no body) for benchmarking TTFT and TPS. They want only the signature line. So we need to write a function signature that presumably takes some parameters for benchmarking TTFT (Time to First Transaction?) and TPS (Transactions Per Second). The function signature should be short, no body. Return only the signature line. So something like:\n\ndef benchmark_ttft_tps(data_loader, model, device, batch_size: int, num_batches: int) -> Tuple[float, float]:\n\nBut they want only the signature line. So we need to output just that line. No body. So we can write:\n\ndef benchmark_ttft_tps(data_loader, model, device, batch_size: int, num_batches: int) -> Tuple[float, float]:\n\nBut we need to import Tuple? But signature line can include typing. It's fine. They didn't ask for imports. Just the signature line. So we output that. Ensure no body. So just the line. Probably include return type. So final answer: the signature line.def benchmark_ttft_tps(data_loader, model, device, batch_size: int, num_batches: int) -> Tuple[float, float]:",
+        "ttft_ms": 1222,
+        "tps": 152.99,
+        "total_latency_ms": 2830,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 159,
+        "prompt_tokens": 92,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user wants a short Python function signature (no body) for benchmarking TTFT and TPS. They want only the signature line. So we need to write a function signature that presumably takes some parameters for benchmarking TTFT (Time to First Transaction?) and TPS (Transactions Per Second). The function signature should be short, no body. Return only the signature line. So something like:\n\ndef benchmark_ttft_tps(data_loader, model, device, batch_size: int, num_batches: int) -> Tuple[float, float]:\n\nBut they want only the signature line. So we need to output just that line. No body. So we can write:\n\ndef benchmark_ttft_tps(data_loader, model, device, batch_size: int, num_batches: int) -> Tuple[float, float]:\n\nBut we need to import Tuple? But signature line can include typing. It's fine. They didn't ask for imports. Just the signature line. So we output that. Ensure no body. So just the line. Probably include return type. So final answer: the signature line.def benchmark_ttft_tps(data_loader, model, device, batch_size: int, num_batches: int) -> Tuple[float, float]:",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unterminated string in JSON at position 402 (line 1 column 403)"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:14.245Z"
+      },
+      {
+        "promptId": "code_03",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user wants a short Python function signature (no body) for benchmarking TTFT and TPS. Return only the signature line. So we need something like:\n\ndef benchmark_ttft_tps(model, dataset, num_trials=10, warmup=2, device='cpu') -> Tuple[float, float]:\n\nBut they said short. Could be:\n\ndef benchmark_ttft_tps(model, inputs, *, trials=5) -> Tuple[float, float]:\n\nWe need to import typing? Not needed in signature. Just the line. Return only the signature line. So output just that line. Ensure it's a valid Python function signature with type hints maybe. Provide only one line. Let's produce:\n\ndef benchmark_ttft_tps(model, data, *, trials: int = 5) -> tuple[float, float]:def benchmark_ttft_tps(model, data, *, trials: int = 5) -> tuple[float, float]:",
+        "ttft_ms": 1360,
+        "tps": 108.93,
+        "total_latency_ms": 3095,
+        "tokens_generated": 199,
+        "tokens_generated_whitespace": 108,
+        "prompt_tokens": 92,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user wants a short Python function signature (no body) for benchmarking TTFT and TPS. Return only the signature line. So we need something like:\n\ndef benchmark_ttft_tps(model, dataset, num_trials=10, warmup=2, device='cpu') -> Tuple[float, float]:\n\nBut they said short. Could be:\n\ndef benchmark_ttft_tps(model, inputs, *, trials=5) -> Tuple[float, float]:\n\nWe need to import typing? Not needed in signature. Just the line. Return only the signature line. So output just that line. Ensure it's a valid Python function signature with type hints maybe. Provide only one line. Let's produce:\n\ndef benchmark_ttft_tps(model, data, *, trials: int = 5) -> tuple[float, float]:def benchmark_ttft_tps(model, data, *, trials: int = 5) -> tuple[float, float]:",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:17.341Z"
+      },
+      {
+        "promptId": "json_03",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "```json\n{\n  \"ttft_ms\": 123,\n  \"tps\": 456,\n  \"memory_mb\": 789\n}\n```",
+        "ttft_ms": 684,
+        "tps": 29.07,
+        "total_latency_ms": 1716,
+        "tokens_generated": 30,
+        "tokens_generated_whitespace": 10,
+        "prompt_tokens": 13,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "```json\n{\n  \"ttft_ms\": 123,\n  \"tps\": 456,\n  \"memory_mb\": 789\n}\n```",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:19.057Z"
+      },
+      {
+        "promptId": "json_03",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user wants a JSON with keys: 'ttft_ms', 'tps', 'memory_mb' and plausible numeric example values. They want only JSON, no explanation. So we need to output something like:\n\n{\n  \"ttft_ms\": 120,\n  \"tps\": 3500,\n  \"memory_mb\": 512\n}\n\nWe need plausible numeric example values. Let's choose realistic values: ttft_ms maybe 200 ms, tps maybe 5000, memory_mb maybe 1024. Or something. Provide JSON only. Ensure no extra text.{\"ttft_ms\": 210, \"tps\": 4800, \"memory_mb\": 1024}",
+        "ttft_ms": 1464,
+        "tps": 118.99,
+        "total_latency_ms": 2649,
+        "tokens_generated": 151,
+        "tokens_generated_whitespace": 70,
+        "prompt_tokens": 94,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user wants a JSON with keys: 'ttft_ms', 'tps', 'memory_mb' and plausible numeric example values. They want only JSON, no explanation. So we need to output something like:\n\n{\n  \"ttft_ms\": 120,\n  \"tps\": 3500,\n  \"memory_mb\": 512\n}\n\nWe need plausible numeric example values. Let's choose realistic values: ttft_ms maybe 200 ms, tps maybe 5000, memory_mb maybe 1024. Or something. Provide JSON only. Ensure no extra text.{\"ttft_ms\": 210, \"tps\": 4800, \"memory_mb\": 1024}",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:21.707Z"
+      },
+      {
+        "promptId": "json_03",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user wants a JSON with keys: 'ttft_ms', 'tps', 'memory_mb' and plausible numeric example values. They want only JSON, no extra text. So produce something like:\n\n{\n  \"ttft_ms\": 123,\n  \"tps\": 45.6,\n  \"memory_mb\": 789\n}\n\nMake sure it's valid JSON. Provide plausible values: ttft_ms (time to first token in ms) maybe 150-300ms, tps (tokens per second) maybe 20-30, memory_mb maybe 200-800. Provide numbers. Return only JSON.{\n  \"ttft_ms\": 182,\n  \"tps\": 27.4,\n  \"memory_mb\": 512\n}",
+        "ttft_ms": 452,
+        "tps": 34.3,
+        "total_latency_ms": 4825,
+        "tokens_generated": 165,
+        "tokens_generated_whitespace": 72,
+        "prompt_tokens": 94,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user wants a JSON with keys: 'ttft_ms', 'tps', 'memory_mb' and plausible numeric example values. They want only JSON, no extra text. So produce something like:\n\n{\n  \"ttft_ms\": 123,\n  \"tps\": 45.6,\n  \"memory_mb\": 789\n}\n\nMake sure it's valid JSON. Provide plausible values: ttft_ms (time to first token in ms) maybe 150-300ms, tps (tokens per second) maybe 20-30, memory_mb maybe 200-800. Provide numbers. Return only JSON.{\n  \"ttft_ms\": 182,\n  \"tps\": 27.4,\n  \"memory_mb\": 512\n}",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:26.533Z"
+      },
+      {
+        "promptId": "extraction_03",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "[\n  \"gaming laptop\",\n  \"MacBook Air\"\n]",
+        "ttft_ms": 698,
+        "tps": 28.99,
+        "total_latency_ms": 1181,
+        "tokens_generated": 14,
+        "tokens_generated_whitespace": 6,
+        "prompt_tokens": 25,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "[\n  \"gaming laptop\",\n  \"MacBook Air\"\n]",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unterminated string in JSON at position 130 (line 6 column 48)"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:27.713Z"
+      },
+      {
+        "promptId": "extraction_03",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "The user says: \"From this text, extract the device types mentioned: 'We tested on a gaming laptop and a MacBook Air.' Return only a JSON array of strings.\"\n\nWe need to parse the text: \"We tested on a gaming laptop and a MacBook Air.\" The device types mentioned: \"gaming laptop\" and \"MacBook Air\". So output JSON array: [\"gaming laptop\", \"MacBook Air\"].\n\nWe must return only JSON array of strings. So output: [\"gaming laptop\",\"MacBook Air\"].\n\nMake sure to include quotes and comma. No extra text.[\"gaming laptop\",\"MacBook Air\"]",
+        "ttft_ms": 408,
+        "tps": 144.32,
+        "total_latency_ms": 1288,
+        "tokens_generated": 137,
+        "tokens_generated_whitespace": 86,
+        "prompt_tokens": 100,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user says: \"From this text, extract the device types mentioned: 'We tested on a gaming laptop and a MacBook Air.' Return only a JSON array of strings.\"\n\nWe need to parse the text: \"We tested on a gaming laptop and a MacBook Air.\" The device types mentioned: \"gaming laptop\" and \"MacBook Air\". So output JSON array: [\"gaming laptop\", \"MacBook Air\"].\n\nWe must return only JSON array of strings. So output: [\"gaming laptop\",\"MacBook Air\"].\n\nMake sure to include quotes and comma. No extra text.[\"gaming laptop\",\"MacBook Air\"]",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:29.001Z"
+      },
+      {
+        "promptId": "extraction_03",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user wants to extract device types mentioned in the given text: \"We tested on a gaming laptop and a MacBook Air.\" Device types: \"gaming laptop\" and \"MacBook Air\". Return only a JSON array of strings. So output: [\"gaming laptop\",\"MacBook Air\"].\n\nMake sure format is correct JSON array.[\"gaming laptop\", \"MacBook Air\"]",
+        "ttft_ms": 1352,
+        "tps": 93.6,
+        "total_latency_ms": 2164,
+        "tokens_generated": 86,
+        "tokens_generated_whitespace": 51,
+        "prompt_tokens": 100,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user wants to extract device types mentioned in the given text: \"We tested on a gaming laptop and a MacBook Air.\" Device types: \"gaming laptop\" and \"MacBook Air\". Return only a JSON array of strings. So output: [\"gaming laptop\",\"MacBook Air\"].\n\nMake sure format is correct JSON array.[\"gaming laptop\", \"MacBook Air\"]",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:31.165Z"
+      },
+      {
+        "promptId": "reasoning_03",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "A 4-bit quantized model might hallucinate more than a full precision model for the following reasons:\n\n1. **Loss of precision in calculations**: When a model is quantized to 4-bit precision, the calculations performed by the model are less precise than those performed by a full-precision model. This can lead to errors in the model's predictions, causing it to hallucinate or produce unrealistic results.\n\n2. **Reduced representational capacity**: 4-bit quantization reduces the number of possible values that can be represented by each weight or activation, which can limit the model's ability to capture complex patterns in the data. This reduced representational capacity can cause the model to overfit or hallucinate when faced with new, unseen data.\n\n3. **Increased sensitivity to noise**: 4-bit quantization can also make a model more sensitive to noise in the data, as small errors in the calculations can have a larger impact on the model's predictions. This increased sensitivity to noise can cause the model to hallucinate or produce unrealistic results, especially when the data is noisy or contains outliers.\n\nThese are just a few reasons why a 4-bit quantized model might hallucinate more than a full-precision model. Do you have any other questions on this topic?",
+        "ttft_ms": 693,
+        "tps": 21.06,
+        "total_latency_ms": 12799,
+        "tokens_generated": 255,
+        "tokens_generated_whitespace": 200,
+        "prompt_tokens": 16,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "A 4-bit quantized model might hallucinate more than a full precision model for the following reasons:\n\n1. **Loss of precision in calculations**: When a model is quantized to 4-bit precision, the calculations performed by the model are less precise than those performed by a full-precision model. This can lead to errors in the model's predictions, causing it to hallucinate or produce unrealistic results.\n\n2. **Reduced representational capacity**: 4-bit quantization reduces the number of possible values that can be represented by each weight or activation, which can limit the model's ability to capture complex patterns in the data. This reduced representational capacity can cause the model to overfit or hallucinate when faced with new, unseen data.\n\n3. **Increased sensitivity to noise**: 4-bit quantization can also make a model more sensitive to noise in the data, as small errors in the calculations can have a larger impact on the model's predictions. This increased sensitivity to noise can cause the model to hallucinate or produce unrealistic results, especially when the data is noisy or contains outliers.\n\nThese are just a few reasons why a 4-bit quantized model might hallucinate more than a full-precision model. Do you have any other questions on this topic?",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:43.965Z"
+      },
+      {
+        "promptId": "reasoning_03",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We need to answer: Why might a 4-bit quantized model hallucinate more than a full precision model? Provide 3 reasons. So we need to explain hallucination: generating incorrect or fabricated content. In quantized models, lower precision reduces representational capacity, increases quantization error, can lead to less accurate weights, less stable inference, more noise, etc. So reasons: 1) Reduced precision leads to higher quantization error, causing weights to be less accurate, leading to less reliable predictions. 2) Lower precision reduces dynamic range, causing saturation/clipping, leading to loss of subtle distinctions, making model less able to differentiate between similar contexts, leading to hallucinations. 3) Quantization can cause loss of gradient flow or training stability, leading to suboptimal fine-tuning, causing the model to overfit or underfit, leading to hallucinations. Also, 4-bit quantization may cause more frequent rounding errors, causing the model to produce less coherent outputs. Also, the quantized model may have less capacity to represent complex patterns, leading to over-generalization. Also, quantization may degrade the ability to capture rare tokens or subtle semantics, leading to hallucinations. Provide 3 reasons: quantization error, reduced dynamic",
+        "ttft_ms": 1029,
+        "tps": 87.06,
+        "total_latency_ms": 3935,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 181,
+        "prompt_tokens": 92,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "We need to answer: Why might a 4-bit quantized model hallucinate more than a full precision model? Provide 3 reasons. So we need to explain hallucination: generating incorrect or fabricated content. In quantized models, lower precision reduces representational capacity, increases quantization error, can lead to less accurate weights, less stable inference, more noise, etc. So reasons: 1) Reduced precision leads to higher quantization error, causing weights to be less accurate, leading to less reliable predictions. 2) Lower precision reduces dynamic range, causing saturation/clipping, leading to loss of subtle distinctions, making model less able to differentiate between similar contexts, leading to hallucinations. 3) Quantization can cause loss of gradient flow or training stability, leading to suboptimal fine-tuning, causing the model to overfit or underfit, leading to hallucinations. Also, 4-bit quantization may cause more frequent rounding errors, causing the model to produce less coherent outputs. Also, the quantized model may have less capacity to represent complex patterns, leading to over-generalization. Also, quantization may degrade the ability to capture rare tokens or subtle semantics, leading to hallucinations. Provide 3 reasons: quantization error, reduced dynamic",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:47.903Z"
+      },
+      {
+        "promptId": "reasoning_03",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user asks: \"Why might a 4-bit quantized model hallucinate more than a full precision model? Give 3 reasons.\"\n\nWe need to answer. It's a technical question about quantization and hallucination (generation of false or nonsensical content). Provide three reasons: reduced representational capacity, increased quantization noise, loss of precision in weights and activations leading to degraded language modeling, etc. Also mention that quantization can affect calibration, cause distribution shift, degrade attention, cause gradient issues, etc. Provide concise but thorough answer.\n\nWe should comply. No disallowed content. Provide answer.### Why a 4‑bit quantized LLM can hallucinate more often than its full‑precision counterpart  \n\n| # | Reason | How it fuels hallucination |\n|---|--------|----------------------------|\n| **1. Loss of numeric precision → higher quantization noise** | In a 4‑bit format each weight or activation is represented by only 16 discrete levels (often with a shared scale factor). The rounding and clipping that map the original 16‑/32‑bit floating‑point values to these levels introduce **quantization error** that is effectively random noise added to the model’s internal representations",
+        "ttft_ms": 1188,
+        "tps": 110.71,
+        "total_latency_ms": 3419,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 172,
+        "prompt_tokens": 92,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user asks: \"Why might a 4-bit quantized model hallucinate more than a full precision model? Give 3 reasons.\"\n\nWe need to answer. It's a technical question about quantization and hallucination (generation of false or nonsensical content). Provide three reasons: reduced representational capacity, increased quantization noise, loss of precision in weights and activations leading to degraded language modeling, etc. Also mention that quantization can affect calibration, cause distribution shift, degrade attention, cause gradient issues, etc. Provide concise but thorough answer.\n\nWe should comply. No disallowed content. Provide answer.### Why a 4‑bit quantized LLM can hallucinate more often than its full‑precision counterpart  \n\n| # | Reason | How it fuels hallucination |\n|---|--------|----------------------------|\n| **1. Loss of numeric precision → higher quantization noise** | In a 4‑bit format each weight or activation is represented by only 16 discrete levels (often with a shared scale factor). The rounding and clipping that map the original 16‑/32‑bit floating‑point values to these levels introduce **quantization error** that is effectively random noise added to the model’s internal representations",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:51.323Z"
+      },
+      {
+        "promptId": "instruction_following_02",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "In contrast to cloud LLMs, edge LLMs offer faster response times and lower latency, but may compromise on quality due to the limited computational resources and data available on the edge device.",
+        "ttft_ms": 699,
+        "tps": 26.82,
+        "total_latency_ms": 2153,
+        "tokens_generated": 39,
+        "tokens_generated_whitespace": 32,
+        "prompt_tokens": 15,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "In contrast to cloud LLMs, edge LLMs offer faster response times and lower latency, but may compromise on quality due to the limited computational resources and data available on the edge device.",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:53.477Z"
+      },
+      {
+        "promptId": "instruction_following_02",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We need to write a 1-sentence conclusion comparing edge and cloud LLMs, must mention both latency and quality. So something like: \"Edge LLMs offer lower latency but often sacrifice some quality compared to cloud LLMs, which provide higher quality outputs at the cost of higher latency.\" That is a single sentence. Ensure mention both latency and quality. That should satisfy.Edge LLMs deliver lower latency but typically trade off some quality, whereas cloud LLMs achieve higher quality outputs at the expense of higher latency.",
+        "ttft_ms": 443,
+        "tps": 80.84,
+        "total_latency_ms": 1779,
+        "tokens_generated": 118,
+        "tokens_generated_whitespace": 83,
+        "prompt_tokens": 91,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "We need to write a 1-sentence conclusion comparing edge and cloud LLMs, must mention both latency and quality. So something like: \"Edge LLMs offer lower latency but often sacrifice some quality compared to cloud LLMs, which provide higher quality outputs at the cost of higher latency.\" That is a single sentence. Ensure mention both latency and quality. That should satisfy.Edge LLMs deliver lower latency but typically trade off some quality, whereas cloud LLMs achieve higher quality outputs at the expense of higher latency.",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:49:55.255Z"
+      },
+      {
+        "promptId": "instruction_following_02",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "The user wants a single sentence conclusion comparing edge and cloud LLMs, mentioning both latency and quality. So produce one sentence that includes both aspects. Ensure it's a conclusion. Provide one sentence.In conclusion, while edge‑deployed LLMs excel in ultra‑low latency by processing data locally, cloud‑based LLMs typically deliver higher-quality outputs thanks to access to larger models and more up‑to‑date training resources.",
+        "ttft_ms": 4696,
+        "tps": 147.9,
+        "total_latency_ms": 5291,
+        "tokens_generated": 98,
+        "tokens_generated_whitespace": 61,
+        "prompt_tokens": 91,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "The user wants a single sentence conclusion comparing edge and cloud LLMs, mentioning both latency and quality. So produce one sentence that includes both aspects. Ensure it's a conclusion. Provide one sentence.In conclusion, while edge‑deployed LLMs excel in ultra‑low latency by processing data locally, cloud‑based LLMs typically deliver higher-quality outputs thanks to access to larger models and more up‑to‑date training resources.",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:50:00.547Z"
+      },
+      {
+        "promptId": "coherence_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "**What is WebGPU?**\n\nWebGPU is a new web API that allows web browsers to access the power of modern graphics processing units (GPUs) directly. Think of it like a supercharged engine for your web browser. It's designed to make web applications, including those that use machine learning (ML), run faster and more efficiently.\n\n**Why does it matter for ML in browsers?**\n\nTraditional web browsers use the CPU (central processing unit) to handle computations, which can be slow for complex tasks like ML. WebGPU changes this by allowing browsers to offload these tasks to the GPU, which is much faster and more efficient.\n\nHere are some key benefits for ML in browsers:\n\n1. **Faster computations**: By leveraging the GPU's power, ML models can be trained and executed much quicker, making it possible to build more complex and accurate models in the browser.\n2. **Improved performance**: WebGPU enables browsers to handle large datasets and complex computations without slowing down the user experience, making it ideal for applications like image classification, natural language processing, and more.\n3. **Increased accessibility**: With WebGPU, developers can create ML-powered web applications that run on a wide range of devices, including those with limited CPU resources, making ML more accessible to a",
+        "ttft_ms": 685,
+        "tps": 13.65,
+        "total_latency_ms": 19435,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 204,
+        "prompt_tokens": 15,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.25,
+        "scoring_details": {
+          "method": "embedding+judge",
+          "raw_output": "**What is WebGPU?**\n\nWebGPU is a new web API that allows web browsers to access the power of modern graphics processing units (GPUs) directly. Think of it like a supercharged engine for your web browser. It's designed to make web applications, including those that use machine learning (ML), run faster and more efficiently.\n\n**Why does it matter for ML in browsers?**\n\nTraditional web browsers use the CPU (central processing unit) to handle computations, which can be slow for complex tasks like ML. WebGPU changes this by allowing browsers to offload these tasks to the GPU, which is much faster and more efficient.\n\nHere are some key benefits for ML in browsers:\n\n1. **Faster computations**: By leveraging the GPU's power, ML models can be trained and executed much quicker, making it possible to build more complex and accurate models in the browser.\n2. **Improved performance**: WebGPU enables browsers to handle large datasets and complex computations without slowing down the user experience, making it ideal for applications like image classification, natural language processing, and more.\n3. **Increased accessibility**: With WebGPU, developers can create ML-powered web applications that run on a wide range of devices, including those with limited CPU resources, making ML more accessible to a",
+          "embedding_score": 0,
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.25
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:50:19.984Z"
+      },
+      {
+        "promptId": "coherence_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We need to explain WebGPU in simple terms and why it matters for ML in browsers. Should cover what WebGPU is: a new web standard for GPU access, successor to WebGL, more low-level, better performance, compute shaders, etc. Why matters: allows running ML models directly in browser with GPU acceleration, enabling faster inference, privacy, offline, no server, etc. Also mention that WebGPU is supported in Chrome, Edge, Safari, Firefox soon. Provide simple analogies. Also mention that WebGPU can run compute shaders, not just graphics, so can do matrix ops. Also mention that ML frameworks like TensorFlow.js, ONNX.js, etc. can use WebGPU. Also mention that it reduces reliance on WebGL, which is limited. Also mention that WebGPU is more efficient, less overhead, better memory management. Also mention that it opens up new possibilities for interactive ML demos, AR/VR, etc. Also mention that it's part of the future of web. Provide simple terms. Also mention that WebGPU is like giving the browser a direct line to the GPU, like a remote control. Also mention that it's not just for graphics but for general compute. Also mention that it matters for ML because ML is compute heavy, GPU",
+        "ttft_ms": 545,
+        "tps": 108.38,
+        "total_latency_ms": 2861,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 195,
+        "prompt_tokens": 86,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.25,
+        "scoring_details": {
+          "method": "embedding+judge",
+          "raw_output": "We need to explain WebGPU in simple terms and why it matters for ML in browsers. Should cover what WebGPU is: a new web standard for GPU access, successor to WebGL, more low-level, better performance, compute shaders, etc. Why matters: allows running ML models directly in browser with GPU acceleration, enabling faster inference, privacy, offline, no server, etc. Also mention that WebGPU is supported in Chrome, Edge, Safari, Firefox soon. Provide simple analogies. Also mention that WebGPU can run compute shaders, not just graphics, so can do matrix ops. Also mention that ML frameworks like TensorFlow.js, ONNX.js, etc. can use WebGPU. Also mention that it reduces reliance on WebGL, which is limited. Also mention that WebGPU is more efficient, less overhead, better memory management. Also mention that it opens up new possibilities for interactive ML demos, AR/VR, etc. Also mention that it's part of the future of web. Provide simple terms. Also mention that WebGPU is like giving the browser a direct line to the GPU, like a remote control. Also mention that it's not just for graphics but for general compute. Also mention that it matters for ML because ML is compute heavy, GPU",
+          "embedding_score": 0,
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.25
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:50:22.848Z"
+      },
+      {
+        "promptId": "coherence_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "We need to answer: explain in simple terms what WebGPU is and why it matters for ML in browsers. Should be clear, non-technical but accurate. Should cover that WebGPU is a web API for GPU access, successor to WebGL, low-level, cross-platform, better performance, compute shaders, etc. Why matters for ML: faster training/inference, use GPU for tensor ops, reduce latency, enable on-device privacy, etc. Also mention that it's standardized, works across browsers, future of web compute. Provide examples. Should be simple. Probably bullet points. Let's produce final.**WebGPU in a nutshell**\n\n| What it is | Why it matters for machine‑learning (ML) in the browser |\n|------------|----------------------------------------------------------|\n| **A new web API that lets web pages talk directly to the computer’s graphics card (GPU).** Think of it as a “universal remote control” for the GPU that works in Chrome, Edge, Firefox, Safari, on Windows, macOS, Linux, Android, iOS, etc. | **GPUs are really good at the kind of math that ML needs** (lots of parallel multiplications and additions). WebGPU gives web code the same fast",
+        "ttft_ms": 1981,
+        "tps": 68.73,
+        "total_latency_ms": 5575,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 173,
+        "prompt_tokens": 86,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.25,
+        "scoring_details": {
+          "method": "embedding+judge",
+          "raw_output": "We need to answer: explain in simple terms what WebGPU is and why it matters for ML in browsers. Should be clear, non-technical but accurate. Should cover that WebGPU is a web API for GPU access, successor to WebGL, low-level, cross-platform, better performance, compute shaders, etc. Why matters for ML: faster training/inference, use GPU for tensor ops, reduce latency, enable on-device privacy, etc. Also mention that it's standardized, works across browsers, future of web compute. Provide examples. Should be simple. Probably bullet points. Let's produce final.**WebGPU in a nutshell**\n\n| What it is | Why it matters for machine‑learning (ML) in the browser |\n|------------|----------------------------------------------------------|\n| **A new web API that lets web pages talk directly to the computer’s graphics card (GPU).** Think of it as a “universal remote control” for the GPU that works in Chrome, Edge, Firefox, Safari, on Windows, macOS, Linux, Android, iOS, etc. | **GPUs are really good at the kind of math that ML needs** (lots of parallel multiplications and additions). WebGPU gives web code the same fast",
+          "embedding_score": 0,
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unterminated string in JSON at position 236 (line 1 column 237)"
+          ],
+          "objective_score": 0.25
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:50:28.424Z"
+      },
+      {
+        "promptId": "planning_01",
+        "system": "edge",
+        "model": "Edge (WebGPU)",
+        "output": "Here's a proposed experiment design to compare edge vs cloud inference on 3 devices:\n\n• **Devices**: Select 3 devices with varying processing capabilities: a high-end smartphone (e.g., Google Pixel 6), a mid-range tablet (e.g., Apple iPad 8), and a low-end single-board computer (e.g., Raspberry Pi 4).\n\n• **Inference Model**: Choose a pre-trained machine learning model (e.g., MobileNet) and convert it for both edge (e.g., TensorFlow Lite) and cloud (e.g., TensorFlow) inference.\n\n• **Edge Inference Setup**: Install the edge inference model on each device, and configure them to perform inference tasks (e.g., image classification) using the device's camera or a pre-loaded dataset.\n\n• **Cloud Inference Setup**: Set up a cloud-based inference service (e.g., Google Cloud AI Platform) and configure each device to send inference requests to the cloud for processing.\n\n• **Performance Metrics**: Measure and compare the performance of edge and cloud inference on each device using metrics such as inference time, latency, accuracy, and power consumption.\n\n• **Statistical Analysis**: Analyze the results using statistical methods (e.g., ANOVA, t-tests) to determine significant differences between edge",
+        "ttft_ms": 696,
+        "tps": 21.61,
+        "total_latency_ms": 12545,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 174,
+        "prompt_tokens": 19,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 4309,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "Here's a proposed experiment design to compare edge vs cloud inference on 3 devices:\n\n• **Devices**: Select 3 devices with varying processing capabilities: a high-end smartphone (e.g., Google Pixel 6), a mid-range tablet (e.g., Apple iPad 8), and a low-end single-board computer (e.g., Raspberry Pi 4).\n\n• **Inference Model**: Choose a pre-trained machine learning model (e.g., MobileNet) and convert it for both edge (e.g., TensorFlow Lite) and cloud (e.g., TensorFlow) inference.\n\n• **Edge Inference Setup**: Install the edge inference model on each device, and configure them to perform inference tasks (e.g., image classification) using the device's camera or a pre-loaded dataset.\n\n• **Cloud Inference Setup**: Set up a cloud-based inference service (e.g., Google Cloud AI Platform) and configure each device to send inference requests to the cloud for processing.\n\n• **Performance Metrics**: Measure and compare the performance of edge and cloud inference on each device using metrics such as inference time, latency, accuracy, and power consumption.\n\n• **Statistical Analysis**: Analyze the results using statistical methods (e.g., ANOVA, t-tests) to determine significant differences between edge",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:50:40.971Z"
+      },
+      {
+        "promptId": "planning_01",
+        "system": "cloud_small",
+        "model": "Cloud Small",
+        "output": "We need to propose an experiment design to compare edge vs cloud inference on 3 devices. Keep it under 6 bullet points. So we need to propose a concise experiment design. The user wants an experiment design to compare edge vs cloud inference on 3 devices. Likely devices: e.g., smartphone, Raspberry Pi, and a laptop. Or maybe 3 different edge devices: smartphone, embedded board, and a small server. The experiment should measure latency, throughput, accuracy, power consumption, cost, etc. Keep it under 6 bullet points. So we need to propose 5 or 6 bullet points. Each bullet point should be a step or component of the experiment. Let's propose:\n\n- Define inference task and dataset (e.g., image classification on ImageNet subset).\n- Select 3 devices: (1) high-end smartphone (edge), (2) Raspberry Pi 4 (edge), (3) laptop with GPU (cloud).\n- Deploy same model (e.g., MobileNetV2) on all devices; for cloud, use remote server with GPU; for edge, run on device.\n- Measure metrics: inference latency, throughput, CPU/GPU utilization, power consumption, network usage, accuracy.\n- Run 1000 inference",
+        "ttft_ms": 5387,
+        "tps": 144.65,
+        "total_latency_ms": 7136,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 177,
+        "prompt_tokens": 93,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "We need to propose an experiment design to compare edge vs cloud inference on 3 devices. Keep it under 6 bullet points. So we need to propose a concise experiment design. The user wants an experiment design to compare edge vs cloud inference on 3 devices. Likely devices: e.g., smartphone, Raspberry Pi, and a laptop. Or maybe 3 different edge devices: smartphone, embedded board, and a small server. The experiment should measure latency, throughput, accuracy, power consumption, cost, etc. Keep it under 6 bullet points. So we need to propose 5 or 6 bullet points. Each bullet point should be a step or component of the experiment. Let's propose:\n\n- Define inference task and dataset (e.g., image classification on ImageNet subset).\n- Select 3 devices: (1) high-end smartphone (edge), (2) Raspberry Pi 4 (edge), (3) laptop with GPU (cloud).\n- Deploy same model (e.g., MobileNetV2) on all devices; for cloud, use remote server with GPU; for edge, run on device.\n- Measure metrics: inference latency, throughput, CPU/GPU utilization, power consumption, network usage, accuracy.\n- Run 1000 inference",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:50:48.109Z"
+      },
+      {
+        "promptId": "planning_01",
+        "system": "cloud_large",
+        "model": "Cloud Large",
+        "output": "We need to propose an experiment design comparing edge vs cloud inference on 3 devices. Keep under 6 bullet points. So maybe 5 bullet points. Provide concise design. Should mention devices, models, metrics, procedure, analysis. Provide bullet points. Ensure under 6 bullet points. Let's produce 5 bullet points.- **Select three representative devices** (e.g., a low‑power MCU, a mid‑range smartphone, and an edge GPU board) and install the same pre‑trained model (e.g., MobileNet‑V2) on each; also host the model on a cloud endpoint (e.g., AWS Lambda + GPU).  \n- **Define a fixed inference workload**: run 10 000 image classifications per device, using a shuffled, identical dataset stored locally on the edge devices and streamed to the cloud endpoint for the cloud case.  \n- **Measure key metrics** for each run: latency (per‑inference time), throughput (inferences / second), energy consumption (via on‑board power monitor or software estimator), and total cost (cloud compute + data transfer).  \n- **Control variables**: keep network conditions constant (e.g., 100 Mbps wired LAN",
+        "ttft_ms": 1501,
+        "tps": 83.05,
+        "total_latency_ms": 4451,
+        "tokens_generated": 256,
+        "tokens_generated_whitespace": 164,
+        "prompt_tokens": 93,
+        "memory_js_heap_mb": 0,
+        "model_size_mb": 0,
+        "quality_score": 0.5,
+        "scoring_details": {
+          "method": "judge",
+          "raw_output": "We need to propose an experiment design comparing edge vs cloud inference on 3 devices. Keep under 6 bullet points. So maybe 5 bullet points. Provide concise design. Should mention devices, models, metrics, procedure, analysis. Provide bullet points. Ensure under 6 bullet points. Let's produce 5 bullet points.- **Select three representative devices** (e.g., a low‑power MCU, a mid‑range smartphone, and an edge GPU board) and install the same pre‑trained model (e.g., MobileNet‑V2) on each; also host the model on a cloud endpoint (e.g., AWS Lambda + GPU).  \n- **Define a fixed inference workload**: run 10 000 image classifications per device, using a shuffled, identical dataset stored locally on the edge devices and streamed to the cloud endpoint for the cloud case.  \n- **Measure key metrics** for each run: latency (per‑inference time), throughput (inferences / second), energy consumption (via on‑board power monitor or software estimator), and total cost (cloud compute + data transfer).  \n- **Control variables**: keep network conditions constant (e.g., 100 Mbps wired LAN",
+          "judge_score": 0.5,
+          "judge_reasons": [
+            "Judge API unavailable: Unexpected end of JSON input"
+          ],
+          "objective_score": 0.5
+        },
+        "generation_settings": {
+          "temperature": 0,
+          "top_p": 1,
+          "max_new_tokens": 256
+        },
+        "timestamp": "2026-03-02T15:50:52.561Z"
+      }
+    ],
+    "startedAt": "2026-03-02T15:42:14.095Z",
+    "completedAt": "2026-03-02T15:59:31.858Z"
+  }
+]

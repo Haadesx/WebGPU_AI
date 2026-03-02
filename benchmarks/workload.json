@@ -1,0 +1,161 @@
+[
+  {
+    "id": "math_01",
+    "category": "math",
+    "prompt": "Compute 17*23 + 91.",
+    "expected": { "value": 482 },
+    "scoring": "numeric_tolerance",
+    "tolerance": 0
+  },
+  {
+    "id": "math_02",
+    "category": "math",
+    "prompt": "What is the value of (144/12) + (7*9)?",
+    "expected": { "value": 75 },
+    "scoring": "numeric_tolerance",
+    "tolerance": 0
+  },
+  {
+    "id": "json_01",
+    "category": "json",
+    "prompt": "Return ONLY valid JSON with keys a,b,c where a=2, b is an array [1,2,3], c is the string 'ok'.",
+    "expected": { "a": 2, "b": [1, 2, 3], "c": "ok" },
+    "scoring": "json_schema"
+  },
+  {
+    "id": "json_02",
+    "category": "json",
+    "prompt": "Return ONLY JSON: { \"items\": [ {\"name\":\"pen\",\"qty\":2}, {\"name\":\"book\",\"qty\":1} ], \"total_qty\": 3 }",
+    "expected": { "items": [{ "name": "pen", "qty": 2 }, { "name": "book", "qty": 1 }], "total_qty": 3 },
+    "scoring": "json_schema"
+  },
+  {
+    "id": "extract_01",
+    "category": "extraction",
+    "prompt": "Extract the email from: 'Contact me at varesh.patel@rutgers.edu thanks' Return only the email.",
+    "expected": { "value": "varesh.patel@rutgers.edu", "regex": "^[A-Za-z0-9._%+\\-]+@[A-Za-z0-9.\\-]+\\.[A-Za-z]{2,}$" },
+    "scoring": "regex"
+  },
+  {
+    "id": "extract_02",
+    "category": "extraction",
+    "prompt": "Return the 3rd word in this sentence: 'WebGPU makes browsers fast' Return only the word.",
+    "expected": { "value": "browsers" },
+    "scoring": "exact"
+  },
+  {
+    "id": "code_01",
+    "category": "code",
+    "prompt": "In Python, what does len('Rutgers') return? Return only the number.",
+    "expected": { "value": "7" },
+    "scoring": "exact"
+  },
+  {
+    "id": "code_02",
+    "category": "code",
+    "prompt": "Write a single-line JavaScript expression that converts string s to lowercase. Return ONLY the code.",
+    "expected": { "regex": ["^s\\.toLowerCase\\(\\);?$", "^s\\.toLocaleLowerCase\\(\\);?$"] },
+    "scoring": "regex"
+  },
+  {
+    "id": "logic_01",
+    "category": "reasoning",
+    "prompt": "If all bloops are razzies and all razzies are lazzies, are all bloops definitely lazzies? Answer only YES or NO.",
+    "expected": { "value": "YES" },
+    "scoring": "exact"
+  },
+  {
+    "id": "instruction_01",
+    "category": "instruction_following",
+    "prompt": "Answer with exactly: 'EDGE' (no quotes, no extra text).",
+    "expected": { "value": "EDGE" },
+    "scoring": "exact"
+  },
+  {
+    "id": "instruction_02",
+    "category": "instruction_following",
+    "prompt": "Return ONLY the string 'A,B,C' with no spaces.",
+    "expected": { "value": "A,B,C" },
+    "scoring": "exact"
+  },
+  {
+    "id": "math_03",
+    "category": "math",
+    "prompt": "What is 2^10? Return only the number.",
+    "expected": { "value": 1024 },
+    "scoring": "numeric_tolerance",
+    "tolerance": 0
+  },
+  {
+    "id": "summarize_01",
+    "category": "summarization",
+    "prompt": "Summarize in 2 sentences: LLMs can run in the browser using WebGPU, reducing latency and improving privacy, but memory and compute limits may reduce quality.",
+    "scoring": "embedding+judge"
+  },
+  {
+    "id": "reasoning_01",
+    "category": "reasoning",
+    "prompt": "You have 3 tasks that take 10, 20, 30 minutes. If you can only do two, which two maximize total time saved if outsourcing? Explain briefly.",
+    "scoring": "judge"
+  },
+  {
+    "id": "reasoning_02",
+    "category": "reasoning",
+    "prompt": "Explain TTFT vs TPS in one short paragraph, with an example.",
+    "scoring": "judge"
+  },
+  {
+    "id": "factual_01",
+    "category": "factual",
+    "prompt": "Name two reasons cloud LLM APIs can be problematic for privacy.",
+    "scoring": "judge"
+  },
+  {
+    "id": "instruction_following_01",
+    "category": "instruction_following",
+    "prompt": "Return a bulleted list of 4 evaluation metrics for comparing edge vs cloud LLMs.",
+    "scoring": "judge"
+  },
+  {
+    "id": "code_03",
+    "category": "code",
+    "prompt": "Write a short Python function signature (no body) for benchmarking TTFT and TPS. Return only the signature line.",
+    "scoring": "judge"
+  },
+  {
+    "id": "json_03",
+    "category": "json",
+    "prompt": "Return ONLY JSON with keys: 'ttft_ms', 'tps', 'memory_mb' and plausible numeric example values.",
+    "scoring": "judge"
+  },
+  {
+    "id": "extraction_03",
+    "category": "extraction",
+    "prompt": "From this text, extract the device types mentioned: 'We tested on a gaming laptop and a MacBook Air.' Return only a JSON array of strings.",
+    "scoring": "judge"
+  },
+  {
+    "id": "reasoning_03",
+    "category": "reasoning",
+    "prompt": "Why might a 4-bit quantized model hallucinate more than a full precision model? Give 3 reasons.",
+    "scoring": "judge"
+  },
+  {
+    "id": "instruction_following_02",
+    "category": "instruction_following",
+    "prompt": "Write a 1-sentence conclusion comparing edge and cloud LLMs. Must mention BOTH latency and quality.",
+    "scoring": "judge"
+  },
+  {
+    "id": "coherence_01",
+    "category": "summarization",
+    "prompt": "Explain in simple terms what WebGPU is and why it matters for ML in browsers.",
+    "scoring": "embedding+judge"
+  },
+  {
+    "id": "planning_01",
+    "category": "reasoning",
+    "prompt": "Propose an experiment design to compare edge vs cloud inference on 3 devices. Keep it under 6 bullet points.",
+    "scoring": "judge"
+  }
+]

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+results/*.json
+results/*.csv
+!results/.gitkeep
+*.log
+.DS_Store
+.vite/
