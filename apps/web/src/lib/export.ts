@@ -15,7 +15,7 @@ export function exportSummaryCSV(rows: SummaryRow[]): string {
     "device", "system", "model",
     "avg_ttft_ms", "avg_tps", "p50_ttft_ms", "p95_ttft_ms",
     "avg_quality", "avg_penalty_vs_large", "avg_memory_mb",
-    "PQR", "PQR2", "total_prompts", "total_runs",
+    "PQR", "PQR2", "VSI", "total_prompts", "total_runs",
   ];
 
   const csvRows = rows.map((r) =>

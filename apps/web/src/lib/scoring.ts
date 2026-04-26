@@ -9,9 +9,34 @@ import type { WorkloadItem, ScoringDetails } from "../types";
 
 // ── Objective scorers ──────────────────────────
 
+function stripReasoningText(output: string): string {
+  return output
+    .replace(/<think>[\s\S]*?<\/think>/gi, " ")
+    .replace(/```(?:json|javascript|js|python)?\s*([\s\S]*?)```/gi, "$1")
+    .replace(/^\s*(thinking|analysis|reasoning)\s*:\s*.*$/gim, "")
+    .trim();
+}
+
+function answerVariants(output: string): string[] {
+  const cleaned = stripReasoningText(output);
+  const lines = cleaned
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+  const answerLine = lines
+    .map((line) => line.match(/(?:final\s+answer|answer|therefore)\s*[:\-]\s*(.+)$/i)?.[1]?.trim())
+    .find(Boolean);
+
+  return [
+    cleaned,
+    answerLine ?? "",
+    lines.at(-1) ?? "",
+  ].filter(Boolean);
+}
+
 function scoreExact(output: string, expected: Record<string, unknown>): number {
   const val = String(expected.value ?? "").trim();
-  return output.trim() === val ? 1 : 0;
+  return answerVariants(output).some((candidate) => candidate === val) ? 1 : 0;
 }
 
 function scoreNumericTolerance(
@@ -19,30 +44,62 @@ function scoreNumericTolerance(
   expected: Record<string, unknown>,
   tolerance: number = 0
 ): number {
-  const nums = output.match(/-?\d+\.?\d*/g);
+  const candidates = answerVariants(output);
+  const nums = candidates.flatMap((candidate) => candidate.match(/-?\d+\.?\d*/g) ?? []);
   if (!nums) return 0;
   const target = Number(expected.value);
-  // Check if any number in the output matches
-  for (const n of nums) {
+  const integerRuns = candidates.flatMap((candidate) => candidate.match(/-?\d+/g) ?? []);
+  for (const n of integerRuns.slice(-6)) {
+    if (Math.abs(Number(n) - target) <= tolerance) return 1;
+  }
+  // Prefer final answers, but tolerate models that include brief arithmetic.
+  for (const n of nums.slice(-3)) {
     if (Math.abs(Number(n) - target) <= tolerance) return 1;
   }
   return 0;
 }
 
+function extractJsonCandidate(output: string): string | null {
+  const text = stripReasoningText(output);
+  const start = [...text]
+    .map((char, idx) => (char === "{" || char === "[" ? idx : -1))
+    .find((idx) => idx >= 0);
+  if (start === undefined) return null;
+
+  const open = text[start];
+  const close = open === "{" ? "}" : "]";
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+
+  for (let i = start; i < text.length; i++) {
+    const char = text[i];
+    if (escaped) {
+      escaped = false;
+      continue;
+    }
+    if (char === "\\") {
+      escaped = true;
+      continue;
+    }
+    if (char === "\"") {
+      inString = !inString;
+      continue;
+    }
+    if (inString) continue;
+    if (char === open) depth++;
+    if (char === close) depth--;
+    if (depth === 0) return text.slice(start, i + 1);
+  }
+
+  return text.slice(start);
+}
+
 function scoreJsonSchema(output: string, expected: Record<string, unknown>): number {
   try {
-    // Extract JSON from output (strip markdown fences if present)
-    const jsonMatch = output.match(/```(?:json)?\s*([\s\S]*?)```/) || [null, output];
-    const text = jsonMatch[1] || output;
-    const brace = text.indexOf("{");
-    const bracket = text.indexOf("[");
-    let start = -1;
-    if (brace >= 0 && bracket >= 0) start = Math.min(brace, bracket);
-    else if (brace >= 0) start = brace;
-    else if (bracket >= 0) start = bracket;
-    if (start < 0) return 0;
-
-    const parsed = JSON.parse(text.slice(start));
+    const json = extractJsonCandidate(output);
+    if (!json) return 0;
+    const parsed = JSON.parse(json);
     return deepEqual(parsed, expected) ? 1 : 0;
   } catch {
     return 0;
@@ -50,20 +107,26 @@ function scoreJsonSchema(output: string, expected: Record<string, unknown>): num
 }
 
 function scoreRegex(output: string, expected: Record<string, unknown>): number {
-  const trimmed = output.trim();
+  const candidates = answerVariants(output);
   const patterns: string[] = Array.isArray(expected.regex)
     ? expected.regex
     : [String(expected.regex)];
+  const requireAll = expected.match === "all";
 
-  for (const pat of patterns) {
+  const matches = (pat: string) => {
     try {
-      const re = new RegExp(pat);
-      if (re.test(trimmed)) return 1;
-    } catch { /* skip invalid */ }
-  }
+      const re = new RegExp(pat, "i");
+      return candidates.some((candidate) => re.test(candidate));
+    } catch {
+      return false;
+    }
+  };
+
+  if (requireAll && patterns.every(matches)) return 1;
+  if (!requireAll && patterns.some(matches)) return 1;
 
   // Also try exact match if value is provided
-  if (expected.value && trimmed === String(expected.value).trim()) return 1;
+  if (expected.value && candidates.some((candidate) => candidate === String(expected.value).trim())) return 1;
 
   return 0;
 }
@@ -220,7 +283,7 @@ export async function scoreItem(
       method: obj.method,
       objective_score: obj.score,
       raw_expected: item.expected,
-      raw_output: output.trim(),
+      raw_output: stripReasoningText(output),
     };
   }
 

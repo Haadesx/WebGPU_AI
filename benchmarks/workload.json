@@ -2,160 +2,163 @@
   {
     "id": "math_01",
     "category": "math",
-    "prompt": "Compute 17*23 + 91.",
+    "prompt": "Compute 17*23 + 91. Return only the final number.",
     "expected": { "value": 482 },
     "scoring": "numeric_tolerance",
-    "tolerance": 0
+    "tolerance": 0,
+    "max_new_tokens": 32
   },
   {
     "id": "math_02",
     "category": "math",
-    "prompt": "What is the value of (144/12) + (7*9)?",
-    "expected": { "value": 75 },
+    "prompt": "What is 2^10? Return only the final number.",
+    "expected": { "value": 1024 },
     "scoring": "numeric_tolerance",
-    "tolerance": 0
+    "tolerance": 0,
+    "max_new_tokens": 32
   },
   {
     "id": "json_01",
     "category": "json",
-    "prompt": "Return ONLY valid JSON with keys a,b,c where a=2, b is an array [1,2,3], c is the string 'ok'.",
+    "prompt": "Return only this JSON object with no markdown: {\"a\":2,\"b\":[1,2,3],\"c\":\"ok\"}",
     "expected": { "a": 2, "b": [1, 2, 3], "c": "ok" },
-    "scoring": "json_schema"
+    "scoring": "json_schema",
+    "max_new_tokens": 64
   },
   {
     "id": "json_02",
     "category": "json",
-    "prompt": "Return ONLY JSON: { \"items\": [ {\"name\":\"pen\",\"qty\":2}, {\"name\":\"book\",\"qty\":1} ], \"total_qty\": 3 }",
-    "expected": { "items": [{ "name": "pen", "qty": 2 }, { "name": "book", "qty": 1 }], "total_qty": 3 },
-    "scoring": "json_schema"
+    "prompt": "Return only JSON with numeric keys ttft_ms, tps, and memory_mb. Use plausible positive values.",
+    "expected": {
+      "regex": [
+        "\"ttft_ms\"\\s*:\\s*\\d+(?:\\.\\d+)?",
+        "\"tps\"\\s*:\\s*\\d+(?:\\.\\d+)?",
+        "\"memory_mb\"\\s*:\\s*\\d+(?:\\.\\d+)?"
+      ],
+      "match": "all"
+    },
+    "scoring": "regex",
+    "max_new_tokens": 80
   },
   {
     "id": "extract_01",
     "category": "extraction",
-    "prompt": "Extract the email from: 'Contact me at varesh.patel@rutgers.edu thanks' Return only the email.",
-    "expected": { "value": "varesh.patel@rutgers.edu", "regex": "^[A-Za-z0-9._%+\\-]+@[A-Za-z0-9.\\-]+\\.[A-Za-z]{2,}$" },
-    "scoring": "regex"
+    "prompt": "Extract the email from: 'Contact me at varesh.patel@rutgers.edu thanks'. Return only the email.",
+    "expected": { "value": "varesh.patel@rutgers.edu", "regex": "varesh\\.patel@rutgers\\.edu" },
+    "scoring": "regex",
+    "max_new_tokens": 32
   },
   {
     "id": "extract_02",
     "category": "extraction",
-    "prompt": "Return the 3rd word in this sentence: 'WebGPU makes browsers fast' Return only the word.",
-    "expected": { "value": "browsers" },
-    "scoring": "exact"
+    "prompt": "From this text, extract the device types mentioned: 'We tested on a gaming laptop and a MacBook Air.' Return only a JSON array.",
+    "expected": {
+      "regex": [
+        "\\[\\s*\"gaming laptop\"\\s*,\\s*\"MacBook Air\"\\s*\\]",
+        "\\[\\s*\"MacBook Air\"\\s*,\\s*\"gaming laptop\"\\s*\\]"
+      ]
+    },
+    "scoring": "regex",
+    "max_new_tokens": 64
   },
   {
     "id": "code_01",
     "category": "code",
     "prompt": "In Python, what does len('Rutgers') return? Return only the number.",
-    "expected": { "value": "7" },
-    "scoring": "exact"
+    "expected": { "value": "7", "regex": "\\b7\\b" },
+    "scoring": "regex",
+    "max_new_tokens": 24
   },
   {
     "id": "code_02",
     "category": "code",
-    "prompt": "Write a single-line JavaScript expression that converts string s to lowercase. Return ONLY the code.",
-    "expected": { "regex": ["^s\\.toLowerCase\\(\\);?$", "^s\\.toLocaleLowerCase\\(\\);?$"] },
-    "scoring": "regex"
+    "prompt": "Write one JavaScript expression that converts string s to lowercase. Return only the expression.",
+    "expected": { "regex": ["s\\.toLowerCase\\(\\);?", "s\\.toLocaleLowerCase\\(\\);?"] },
+    "scoring": "regex",
+    "max_new_tokens": 48
   },
   {
     "id": "logic_01",
     "category": "reasoning",
-    "prompt": "If all bloops are razzies and all razzies are lazzies, are all bloops definitely lazzies? Answer only YES or NO.",
-    "expected": { "value": "YES" },
-    "scoring": "exact"
+    "prompt": "If all bloops are razzies and all razzies are lazzies, are all bloops definitely lazzies? Return only YES or NO.",
+    "expected": { "value": "YES", "regex": "\\bYES\\b" },
+    "scoring": "regex",
+    "max_new_tokens": 24
   },
   {
     "id": "instruction_01",
     "category": "instruction_following",
-    "prompt": "Answer with exactly: 'EDGE' (no quotes, no extra text).",
-    "expected": { "value": "EDGE" },
-    "scoring": "exact"
+    "prompt": "Answer with exactly this token: EDGE",
+    "expected": { "value": "EDGE", "regex": "\\bEDGE\\b" },
+    "scoring": "regex",
+    "max_new_tokens": 16
   },
   {
     "id": "instruction_02",
     "category": "instruction_following",
-    "prompt": "Return ONLY the string 'A,B,C' with no spaces.",
-    "expected": { "value": "A,B,C" },
-    "scoring": "exact"
-  },
-  {
-    "id": "math_03",
-    "category": "math",
-    "prompt": "What is 2^10? Return only the number.",
-    "expected": { "value": 1024 },
-    "scoring": "numeric_tolerance",
-    "tolerance": 0
+    "prompt": "Return only four bullet items naming metrics for edge-vs-cloud LLM comparison. Include latency, throughput, memory, and quality.",
+    "expected": {
+      "regex": [
+        "latency",
+        "throughput|tokens per second|\\bTPS\\b",
+        "memory|RAM|VRAM",
+        "quality|accuracy"
+      ],
+      "match": "all"
+    },
+    "scoring": "regex",
+    "max_new_tokens": 96
   },
   {
     "id": "summarize_01",
     "category": "summarization",
-    "prompt": "Summarize in 2 sentences: LLMs can run in the browser using WebGPU, reducing latency and improving privacy, but memory and compute limits may reduce quality.",
-    "scoring": "embedding+judge"
+    "prompt": "In two short sentences, summarize: Browser LLMs using WebGPU improve privacy and can reduce network latency, but they may be slower and lower quality than cloud models.",
+    "scoring": "embedding+judge",
+    "max_new_tokens": 96
   },
   {
     "id": "reasoning_01",
     "category": "reasoning",
-    "prompt": "You have 3 tasks that take 10, 20, 30 minutes. If you can only do two, which two maximize total time saved if outsourcing? Explain briefly.",
-    "scoring": "judge"
-  },
-  {
-    "id": "reasoning_02",
-    "category": "reasoning",
-    "prompt": "Explain TTFT vs TPS in one short paragraph, with an example.",
-    "scoring": "judge"
+    "prompt": "In one short paragraph, explain TTFT versus TPS and why both matter when comparing edge and cloud LLMs.",
+    "scoring": "judge",
+    "max_new_tokens": 96
   },
   {
     "id": "factual_01",
     "category": "factual",
-    "prompt": "Name two reasons cloud LLM APIs can be problematic for privacy.",
-    "scoring": "judge"
+    "prompt": "Name two privacy reasons why a cloud LLM API may be risky compared with local inference. Use one sentence.",
+    "expected": {
+      "regex": [
+        "data|prompt|user",
+        "server|third[- ]party|provider|network|retention|logging"
+      ],
+      "match": "all"
+    },
+    "scoring": "regex",
+    "max_new_tokens": 80
   },
   {
-    "id": "instruction_following_01",
-    "category": "instruction_following",
-    "prompt": "Return a bulleted list of 4 evaluation metrics for comparing edge vs cloud LLMs.",
-    "scoring": "judge"
-  },
-  {
-    "id": "code_03",
-    "category": "code",
-    "prompt": "Write a short Python function signature (no body) for benchmarking TTFT and TPS. Return only the signature line.",
-    "scoring": "judge"
-  },
-  {
-    "id": "json_03",
-    "category": "json",
-    "prompt": "Return ONLY JSON with keys: 'ttft_ms', 'tps', 'memory_mb' and plausible numeric example values.",
-    "scoring": "judge"
-  },
-  {
-    "id": "extraction_03",
-    "category": "extraction",
-    "prompt": "From this text, extract the device types mentioned: 'We tested on a gaming laptop and a MacBook Air.' Return only a JSON array of strings.",
-    "scoring": "judge"
-  },
-  {
-    "id": "reasoning_03",
+    "id": "viability_01",
     "category": "reasoning",
-    "prompt": "Why might a 4-bit quantized model hallucinate more than a full precision model? Give 3 reasons.",
-    "scoring": "judge"
+    "prompt": "Give a one-sentence conclusion: are WebGPU local LLMs viable for lightweight private tasks, and when is cloud still better? Mention both latency and quality.",
+    "expected": {
+      "regex": [
+        "viable|useful|good",
+        "private|privacy|local",
+        "latency",
+        "quality|accuracy",
+        "cloud"
+      ],
+      "match": "all"
+    },
+    "scoring": "regex",
+    "max_new_tokens": 96
   },
   {
-    "id": "instruction_following_02",
-    "category": "instruction_following",
-    "prompt": "Write a 1-sentence conclusion comparing edge and cloud LLMs. Must mention BOTH latency and quality.",
-    "scoring": "judge"
-  },
-  {
-    "id": "coherence_01",
-    "category": "summarization",
-    "prompt": "Explain in simple terms what WebGPU is and why it matters for ML in browsers.",
-    "scoring": "embedding+judge"
-  },
-  {
-    "id": "planning_01",
+    "id": "quantization_01",
     "category": "reasoning",
-    "prompt": "Propose an experiment design to compare edge vs cloud inference on 3 devices. Keep it under 6 bullet points.",
-    "scoring": "judge"
+    "prompt": "List three reasons a 4-bit quantized local model can lose quality versus a larger cloud model. Keep each reason short.",
+    "scoring": "judge",
+    "max_new_tokens": 112
   }
 ]

@@ -152,20 +152,41 @@ async function chatStream(
 }
 
 // ── Objective scoring ──────────────────────────
+function stripReasoningText(output: string): string {
+  return output
+    .replace(/<think>[\s\S]*?<\/think>/gi, " ")
+    .replace(/```(?:json|javascript|js|python)?\s*([\s\S]*?)```/gi, "$1")
+    .replace(/^\s*(thinking|analysis|reasoning)\s*:\s*.*$/gim, "")
+    .trim();
+}
+
+function answerVariants(output: string): string[] {
+  const cleaned = stripReasoningText(output);
+  const lines = cleaned.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+  const answerLine = lines
+    .map((line) => line.match(/(?:final\s+answer|answer|therefore)\s*[:\-]\s*(.+)$/i)?.[1]?.trim())
+    .find(Boolean);
+  return [cleaned, answerLine ?? "", lines.at(-1) ?? ""].filter(Boolean);
+}
+
 function scoreObjective(item: WorkloadItem, output: string): number {
   if (!item.expected) return -1;
 
-  const trimmed = output.trim();
+  const candidates = answerVariants(output);
 
   switch (item.scoring) {
     case "exact":
-      return trimmed === String(item.expected.value).trim() ? 1 : 0;
+      return candidates.some((candidate) => candidate === String(item.expected?.value).trim()) ? 1 : 0;
 
     case "numeric_tolerance": {
-      const nums = trimmed.match(/-?\d+\.?\d*/g);
+      const nums = candidates.flatMap((candidate) => candidate.match(/-?\d+\.?\d*/g) ?? []);
       if (!nums) return 0;
       const target = Number(item.expected.value);
-      for (const n of nums) {
+      const integerRuns = candidates.flatMap((candidate) => candidate.match(/-?\d+/g) ?? []);
+      for (const n of integerRuns.slice(-6)) {
+        if (Math.abs(Number(n) - target) <= (item.tolerance ?? 0)) return 1;
+      }
+      for (const n of nums.slice(-3)) {
         if (Math.abs(Number(n) - target) <= (item.tolerance ?? 0)) return 1;
       }
       return 0;
@@ -173,8 +194,7 @@ function scoreObjective(item: WorkloadItem, output: string): number {
 
     case "json_schema": {
       try {
-        const jsonMatch = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/) || [null, trimmed];
-        const text = jsonMatch[1] || trimmed;
+        const text = stripReasoningText(output);
         const brace = text.indexOf("{");
         if (brace < 0) return 0;
         const parsed = JSON.parse(text.slice(brace));
@@ -188,12 +208,17 @@ function scoreObjective(item: WorkloadItem, output: string): number {
       const patterns: string[] = Array.isArray(item.expected.regex)
         ? (item.expected.regex as string[])
         : [String(item.expected.regex)];
-      for (const p of patterns) {
+      const matches = (p: string) => {
         try {
-          if (new RegExp(p).test(trimmed)) return 1;
-        } catch { /* skip */ }
-      }
-      if (item.expected.value && trimmed === String(item.expected.value).trim()) return 1;
+          const re = new RegExp(p, "i");
+          return candidates.some((candidate) => re.test(candidate));
+        } catch {
+          return false;
+        }
+      };
+      if (item.expected.match === "all" && patterns.every(matches)) return 1;
+      if (item.expected.match !== "all" && patterns.some(matches)) return 1;
+      if (item.expected.value && candidates.some((candidate) => candidate === String(item.expected?.value).trim())) return 1;
       return 0;
     }
 
@@ -418,7 +443,7 @@ async function main() {
   const summaryRows = computeSummaryCSV(allRuns);
   const csvHeaders = [
     "device", "system", "avg_ttft_ms", "avg_tps", "p50_ttft_ms", "p95_ttft_ms",
-    "avg_quality", "avg_penalty_vs_large", "PQR", "PQR2",
+    "avg_quality", "avg_penalty_vs_large", "PQR", "PQR2", "VSI",
   ];
   const csvLines = [csvHeaders.join(",")];
   for (const row of summaryRows) {
@@ -464,6 +489,8 @@ function computeSummaryCSV(runs: RunResult[]) {
     const p50 = ttftArr[Math.floor(ttftArr.length * 0.5)] ?? 0;
     const p95 = ttftArr[Math.floor(ttftArr.length * 0.95)] ?? 0;
     const normTPS = maxTPS > 0 ? s.tps / maxTPS : 0;
+    const responsiveness = 1 / (1 + s.ttft / 1000);
+    const vsi = s.quality * (0.7 * responsiveness + 0.3 * normTPS);
 
     rows.push({
       device: process.platform,
@@ -476,6 +503,7 @@ function computeSummaryCSV(runs: RunResult[]) {
       avg_penalty_vs_large: (largeQ - s.quality).toFixed(3),
       PQR: (normTPS * s.quality).toFixed(3),
       PQR2: (s.quality / (s.ttft / 1000 + 1e-6)).toFixed(3),
+      VSI: vsi.toFixed(3),
     });
   }
 

@@ -2,7 +2,7 @@
 
 > **CS553 — Ethan Nguyen, Varesh Patel, Najeeb Quadri**
 
-A comparative benchmark harness that runs a **4-bit quantized LLM entirely in the browser via WebGPU** alongside **cloud-hosted LLMs**, measuring latency, throughput, memory footprint, and output quality across a fixed workload of 24 prompts.
+A comparative benchmark harness that runs a **4-bit quantized LLM entirely in the browser via WebGPU** alongside **cloud-hosted LLMs**, measuring latency, throughput, memory footprint, and output quality across a fixed viability workload of 16 prompts.
 
 ---
 
@@ -96,52 +96,18 @@ CLOUD_MODEL_LARGE=openai/gpt-oss-120b:free
 
 ## Workload
 
-**24 prompts** in `benchmarks/workload.json` across 8 categories:
+**16 prompts** in `benchmarks/workload.json` across 8 categories, tuned for faster one-day data collection:
 
 | #     | Type                                                         | Count | Scoring                               |
 | ----- | ------------------------------------------------------------ | ----- | ------------------------------------- |
-| 1-12  | Objective (math, json, code, extraction, logic, instruction) | 12    | exact / numeric / json_schema / regex |
-| 13-24 | Subjective (summarization, reasoning, factual, planning)     | 12    | embedding+judge / judge               |
+| 1-11, 14-15 | Objective/semi-objective (math, json, code, extraction, logic, instruction, privacy) | 13 | numeric / json_schema / regex |
+| 12-13, 16 | Subjective (summarization, reasoning, quantization) | 3 | embedding+judge / judge |
 
-Generation settings: `temperature=0`, `top_p=1`, `max_new_tokens=256` (overridable per prompt).
+Generation settings: `temperature=0`, `top_p=1`, with per-prompt `max_new_tokens` caps of 16-112 tokens to keep runs short.
 
 ### Full Prompt List
 
-All prompts are stored in [`benchmarks/workload.json`](benchmarks/workload.json) (also copied to `apps/web/public/workload.json` for browser access).
-
-#### Objective Prompts (1–12)
-
-| #   | ID               | Category    | Scoring     | Prompt                                                                                                           |
-| --- | ---------------- | ----------- | ----------- | ---------------------------------------------------------------------------------------------------------------- |
-| 1   | `math_01`        | math        | numeric     | Compute 17\*23 + 91.                                                                                             |
-| 2   | `math_02`        | math        | numeric     | What is the value of (144/12) + (7\*9)?                                                                          |
-| 3   | `math_03`        | math        | numeric     | What is 2^10? Return only the number.                                                                            |
-| 4   | `json_01`        | json        | json_schema | Return ONLY valid JSON with keys a,b,c where a=2, b is an array [1,2,3], c is the string 'ok'.                   |
-| 5   | `json_02`        | json        | json_schema | Return ONLY JSON: `{ "items": [ {"name":"pen","qty":2}, {"name":"book","qty":1} ], "total_qty": 3 }`             |
-| 6   | `extract_01`     | extraction  | regex       | Extract the email from: 'Contact me at varesh.patel@rutgers.edu thanks' Return only the email.                   |
-| 7   | `extract_02`     | extraction  | exact       | Return the 3rd word in this sentence: 'WebGPU makes browsers fast' Return only the word.                         |
-| 8   | `code_01`        | code        | exact       | In Python, what does len('Rutgers') return? Return only the number.                                              |
-| 9   | `code_02`        | code        | regex       | Write a single-line JavaScript expression that converts string s to lowercase. Return ONLY the code.             |
-| 10  | `logic_01`       | reasoning   | exact       | If all bloops are razzies and all razzies are lazzies, are all bloops definitely lazzies? Answer only YES or NO. |
-| 11  | `instruction_01` | instruction | exact       | Answer with exactly: 'EDGE' (no quotes, no extra text).                                                          |
-| 12  | `instruction_02` | instruction | exact       | Return ONLY the string 'A,B,C' with no spaces.                                                                   |
-
-#### Subjective Prompts (13–24)
-
-| #   | ID                         | Category      | Scoring         | Prompt                                                                                                                                                        |
-| --- | -------------------------- | ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 13  | `summarize_01`             | summarization | embedding+judge | Summarize in 2 sentences: LLMs can run in the browser using WebGPU, reducing latency and improving privacy, but memory and compute limits may reduce quality. |
-| 14  | `coherence_01`             | summarization | embedding+judge | Explain in simple terms what WebGPU is and why it matters for ML in browsers.                                                                                 |
-| 15  | `reasoning_01`             | reasoning     | judge           | You have 3 tasks that take 10, 20, 30 minutes. If you can only do two, which two maximize total time saved if outsourcing? Explain briefly.                   |
-| 16  | `reasoning_02`             | reasoning     | judge           | Explain TTFT vs TPS in one short paragraph, with an example.                                                                                                  |
-| 17  | `reasoning_03`             | reasoning     | judge           | Why might a 4-bit quantized model hallucinate more than a full precision model? Give 3 reasons.                                                               |
-| 18  | `planning_01`              | reasoning     | judge           | Propose an experiment design to compare edge vs cloud inference on 3 devices. Keep it under 6 bullet points.                                                  |
-| 19  | `factual_01`               | factual       | judge           | Name two reasons cloud LLM APIs can be problematic for privacy.                                                                                               |
-| 20  | `instruction_following_01` | instruction   | judge           | Return a bulleted list of 4 evaluation metrics for comparing edge vs cloud LLMs.                                                                              |
-| 21  | `instruction_following_02` | instruction   | judge           | Write a 1-sentence conclusion comparing edge and cloud LLMs. Must mention BOTH latency and quality.                                                           |
-| 22  | `code_03`                  | code          | judge           | Write a short Python function signature (no body) for benchmarking TTFT and TPS. Return only the signature line.                                              |
-| 23  | `json_03`                  | json          | judge           | Return ONLY JSON with keys: 'ttft_ms', 'tps', 'memory_mb' and plausible numeric example values.                                                               |
-| 24  | `extraction_03`            | extraction    | judge           | From this text, extract the device types mentioned: 'We tested on a gaming laptop and a MacBook Air.' Return only a JSON array of strings.                    |
+All prompts are stored in [`benchmarks/workload.json`](benchmarks/workload.json) and copied to `apps/web/public/workload.json` for browser access. The current set is intentionally compact: most prompts are short objective tasks with regex/JSON/numeric scoring, plus three capped subjective prompts for summarization and reasoning quality.
 
 ---
 
@@ -159,6 +125,7 @@ All prompts are stored in [`benchmarks/workload.json`](benchmarks/workload.json)
 | **Quality Score [0,1]** | Per prompt, per scoring type                         |
 | **PQR**                 | `(normalized_TPS) × avg_quality`                     |
 | **PQR2**                | `avg_quality / (TTFT_seconds + ε)`                   |
+| **VSI**                 | `avg_quality × (0.7 × responsiveness + 0.3 × normalized_TPS)` |
 
 ### Memory Limitations
 
@@ -233,7 +200,7 @@ When you export results (JSON or CSV), every record contains the fields below. H
 
 ### Subjective Scoring Fields
 
-These appear in `scoring_details` for subjective prompts (13-24):
+These appear in `scoring_details` for subjective prompts:
 
 | Field             | What It Means                                                                                              |
 | ----------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -256,6 +223,7 @@ These appear in the CSV export and summary cards:
 | `avg_memory_mb`        | mean of JS heap usage                          | Typical memory footprint                                                                                                                          |
 | **`PQR`**              | `(TPS / max_TPS_across_systems) × avg_quality` | **Performance-Quality Ratio** — rewards systems that are both fast AND accurate. A system with high throughput but bad quality scores low.        |
 | **`PQR2`**             | `avg_quality / (avg_TTFT_seconds + 0.000001)`  | **Responsiveness-Quality Ratio** — rewards systems that are both responsive AND accurate. A system with low TTFT and high quality scores highest. |
+| **`VSI`**              | `avg_quality × (0.7 × (1 / (1 + avg_TTFT_seconds)) + 0.3 × normalized_TPS)` | **Viability Score Index** — a presentation-friendly score for whether a model is practical: good answers matter most, but low first-token latency and usable throughput also count. |
 
 ### Device Metadata
 
@@ -273,22 +241,22 @@ These appear in the CSV export and summary cards:
 | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `generation_settings.temperature`    | Controls randomness. **0** = deterministic (always pick the most likely token). Higher = more creative/random. We use 0 for reproducibility. |
 | `generation_settings.top_p`          | Nucleus sampling threshold. **1** = consider all tokens. Lower = only consider the most probable tokens. We use 1 (no filtering).            |
-| `generation_settings.max_new_tokens` | Maximum number of tokens the model is allowed to generate. Default **256**, overridable per prompt.                                          |
+| `generation_settings.max_new_tokens` | Maximum number of tokens the model is allowed to generate. The compact workload sets short per-prompt caps for faster runs.                  |
 
 ---
 
 ## Quality Evaluation
 
-### Objective Prompts (1-12)
+### Objective Prompts
 
 | Scoring             | Logic                                                         |
 | ------------------- | ------------------------------------------------------------- |
-| `exact`             | Trimmed string match                                          |
+| `exact`             | Trimmed/final-answer string match after stripping common reasoning blocks |
 | `numeric_tolerance` | Parse number, compare with tolerance                          |
 | `json_schema`       | Parse JSON, deep-equal (order-insensitive for objects/arrays) |
-| `regex`             | Full-match against one or more regex patterns                 |
+| `regex`             | Case-insensitive regex against cleaned output; arrays can require any or all patterns |
 
-### Subjective Prompts (13-24)
+### Subjective Prompts
 
 | Scoring           | Logic                                                                     |
 | ----------------- | ------------------------------------------------------------------------- |
@@ -300,6 +268,7 @@ These appear in the CSV export and summary cards:
 - **Quality Penalty:** `quality_large − quality_edge`
 - **PQR:** Throughput-weighted quality
 - **PQR2:** Responsiveness-weighted quality
+- **VSI:** Viability score that blends quality, first-token responsiveness, and throughput
 
 ---
 
@@ -382,7 +351,7 @@ The web UI also provides **Export** buttons for JSON and CSV download.
 │           ├── routes/         # chat, embed, judge
 │           └── providers/      # openai.ts (swappable)
 ├── benchmarks/
-│   └── workload.json           # 24 fixed prompts
+│   └── workload.json           # 16 fixed viability prompts
 ├── scripts/
 │   └── bench.ts                # CLI benchmark runner
 ├── results/                    # gitignored output directory

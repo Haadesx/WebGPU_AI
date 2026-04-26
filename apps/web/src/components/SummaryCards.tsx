@@ -45,9 +45,9 @@ const SummaryCards: React.FC<Props> = ({ rows }) => {
               <div className="stat-label">0–1</div>
             </div>
             <div className="stat-card">
-              <div className="stat-label">PQR</div>
-              <div className="stat-value">{row.PQR.toFixed(3)}</div>
-              <div className="stat-label">perf×qual</div>
+              <div className="stat-label">VSI</div>
+              <div className="stat-value">{row.VSI.toFixed(3)}</div>
+              <div className="stat-label">viability</div>
             </div>
           </div>
 
@@ -104,6 +104,7 @@ const SummaryCards: React.FC<Props> = ({ rows }) => {
               <th>P95 TTFT</th>
               <th>Quality</th>
               <th>Penalty</th>
+              <th>VSI</th>
               <th>PQR</th>
               <th>PQR2</th>
               <th>Memory</th>
@@ -119,6 +120,7 @@ const SummaryCards: React.FC<Props> = ({ rows }) => {
                 <td>{r.p95_ttft_ms.toFixed(1)}</td>
                 <td>{r.avg_quality.toFixed(3)}</td>
                 <td>{r.avg_penalty_vs_large.toFixed(3)}</td>
+                <td>{r.VSI.toFixed(3)}</td>
                 <td>{r.PQR.toFixed(3)}</td>
                 <td>{r.PQR2.toFixed(1)}</td>
                 <td>{r.avg_memory_mb > 0 ? `${r.avg_memory_mb.toFixed(0)} MB` : "N/A"}</td>

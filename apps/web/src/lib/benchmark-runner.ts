@@ -266,6 +266,8 @@ export function computeSummary(runs: RunResult[]): SummaryRow[] {
     const normalizedTPS = maxTPS > 0 ? stats.tps / maxTPS : 0;
     const PQR = normalizedTPS * stats.quality;
     const PQR2 = stats.quality / (stats.ttft / 1000 + 1e-6);
+    const responsiveness = 1 / (1 + stats.ttft / 1000);
+    const VSI = stats.quality * (0.7 * responsiveness + 0.3 * normalizedTPS);
 
     rows.push({
       device: `${device.platform} (${device.webgpuAdapter})`,
@@ -280,6 +282,7 @@ export function computeSummary(runs: RunResult[]): SummaryRow[] {
       avg_memory_mb: round2(stats.mem),
       PQR: round3(PQR),
       PQR2: round3(PQR2),
+      VSI: round3(VSI),
       total_prompts: results.length,
       total_runs: runs.length,
     });

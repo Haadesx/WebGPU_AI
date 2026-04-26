@@ -37,7 +37,7 @@ export default function App() {
   const [serverHealthy, setServerHealthy] = useState(false);
 
   /* ── Benchmark ── */
-  const [runs, setRuns] = useState(3);
+  const [runs, setRuns] = useState(1);
   const [enabledSystems, setEnabledSystems] = useState<Record<SystemId, boolean>>({
     edge: false,
     cloud_small: true,

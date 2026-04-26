@@ -85,6 +85,7 @@ export interface SummaryRow {
   avg_memory_mb: number;
   PQR: number;
   PQR2: number;
+  VSI: number;
   total_prompts: number;
   total_runs: number;
 }

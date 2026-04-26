@@ -1,18 +1,12 @@
 import React from "react";
 import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid,
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid,
 } from "recharts";
 import type { SummaryRow } from "../types";
 
 interface Props {
   rows: SummaryRow[];
 }
-
-const COLORS: Record<string, string> = {
-  edge: "#4f8ff7",
-  cloud_small: "#3dd68c",
-  cloud_large: "#a177f7",
-};
 
 const Charts: React.FC<Props> = ({ rows }) => {
   if (rows.length === 0) return null;
@@ -22,7 +16,7 @@ const Charts: React.FC<Props> = ({ rows }) => {
     "Avg TTFT (ms)": r.avg_ttft_ms,
     "Avg TPS": r.avg_tps,
     "Quality": parseFloat((r.avg_quality * 100).toFixed(1)),
-    "PQR": parseFloat((r.PQR * 100).toFixed(1)),
+    "VSI": parseFloat((r.VSI * 100).toFixed(1)),
   }));
 
   return (
@@ -72,16 +66,16 @@ const Charts: React.FC<Props> = ({ rows }) => {
           </ResponsiveContainer>
         </div>
 
-        {/* PQR Comparison */}
+        {/* Viability Score */}
         <div className="card">
-          <h3 className="mb-8">PQR (×100)</h3>
+          <h3 className="mb-8">Viability Score (×100)</h3>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={chartData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#2a2e42" />
               <XAxis dataKey="system" tick={{ fill: "#8b8fa8", fontSize: 12 }} />
               <YAxis tick={{ fill: "#8b8fa8", fontSize: 12 }} />
               <Tooltip />
-              <Bar dataKey="PQR" fill="#f7a94f" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="VSI" fill="#f7a94f" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
