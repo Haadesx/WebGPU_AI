@@ -17,6 +17,7 @@ import ResultsTable from "./components/ResultsTable";
 import SummaryCards from "./components/SummaryCards";
 import Charts from "./components/Charts";
 import DeviceInfo from "./components/DeviceInfo";
+import April26Dashboard from "./components/April26Dashboard";
 
 const edgeEngine = new EdgeEngine();
 const cloudSmall = new CloudEngine("small");
@@ -56,6 +57,7 @@ export default function App() {
 
   /* ── Tabs ── */
   const [activeTab, setActiveTab] = useState<"results" | "summary" | "charts">("results");
+  const [mode, setMode] = useState<"dashboard" | "benchmark">("dashboard");
 
   const runnerRef = useRef<BenchmarkRunner | null>(null);
 
@@ -151,9 +153,25 @@ export default function App() {
           </div>
         </div>
         <div className="text-xs text-muted">
-          Nguyen · Patel · Quadri
+          <button
+            className={`mode-btn ${mode === "dashboard" ? "active" : ""}`}
+            onClick={() => setMode("dashboard")}
+          >
+            April 26 Dashboard
+          </button>
+          <button
+            className={`mode-btn ${mode === "benchmark" ? "active" : ""}`}
+            onClick={() => setMode("benchmark")}
+          >
+            Live Benchmark
+          </button>
         </div>
       </header>
+
+      {mode === "dashboard" ? (
+        <April26Dashboard />
+      ) : (
+        <>
 
       {/* WebGPU status */}
       {gpuOk === true && (
@@ -252,6 +270,8 @@ export default function App() {
             24 prompts × N runs × selected systems — results will appear here.
           </div>
         </div>
+      )}
+        </>
       )}
     </>
   );

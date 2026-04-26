@@ -401,9 +401,219 @@ tbody tr:hover {
   border-bottom-color: var(--accent-blue);
 }
 
+/* ── Dashboard mode ─────────────────────────── */
+.mode-btn {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 7px 11px;
+  margin-left: 8px;
+}
+.mode-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+.mode-btn.active {
+  color: #fff;
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.april-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.dash-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  gap: 18px;
+  align-items: stretch;
+  background:
+    linear-gradient(135deg, rgba(79, 143, 247, 0.18), rgba(61, 214, 140, 0.08)),
+    var(--bg-card);
+  border: 1px solid rgba(79, 143, 247, 0.28);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.dash-eyebrow {
+  color: var(--accent-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.dash-hero h2 {
+  font-size: 2.1rem;
+  margin-bottom: 8px;
+  letter-spacing: 0;
+}
+.dash-hero p {
+  max-width: 740px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+.dash-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.dash-hero-metrics > div,
+.dash-kpi,
+.dash-panel {
+  background: rgba(15, 17, 23, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.dash-hero-metrics > div {
+  padding: 14px;
+  min-width: 0;
+}
+.dash-hero-metrics span,
+.dash-kpi span,
+.dash-panel-head span {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.dash-hero-metrics strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  line-height: 1.25;
+  margin: 8px 0 6px;
+}
+.dash-hero-metrics em {
+  color: var(--accent-green);
+  font-family: var(--font-mono);
+  font-size: 1.45rem;
+  font-style: normal;
+  font-weight: 800;
+}
+.dash-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.dash-kpi {
+  padding: 16px;
+}
+.dash-kpi strong {
+  display: block;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 1.55rem;
+  margin-top: 4px;
+}
+.dash-kpi small {
+  color: var(--text-secondary);
+  display: block;
+  font-size: 0.78rem;
+  margin-top: 3px;
+}
+.dash-panel {
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+.dash-panel-head {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.dash-panel-head h3 {
+  color: var(--text-primary);
+}
+.dash-tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  padding: 10px 12px;
+  box-shadow: var(--shadow);
+}
+.dash-tooltip strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 4px;
+}
+.heat-table-wrap {
+  overflow-x: auto;
+}
+.heat-table th,
+.heat-table td {
+  text-align: center;
+}
+.heat-table tbody td:first-child,
+.heat-table thead th:first-child {
+  text-align: left;
+  min-width: 150px;
+}
+.heat-cell {
+  border-radius: 6px;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 800;
+  min-width: 58px;
+  padding: 6px 8px;
+}
+.heat-green {
+  background: var(--accent-green);
+}
+.heat-orange {
+  background: var(--accent-orange);
+}
+.heat-red {
+  background: var(--accent-red);
+}
+.takeaway-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.takeaway-grid > div {
+  border-left: 3px solid var(--accent-blue);
+  padding-left: 14px;
+}
+.takeaway-grid strong {
+  color: var(--text-primary);
+}
+.takeaway-grid p {
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+  margin-top: 5px;
+}
+
 /* ── Recharts overrides ─────────────────────── */
 .recharts-default-tooltip {
   background: var(--bg-card) !important;
   border: 1px solid var(--border) !important;
   border-radius: 8px !important;
+}
+
+@media (max-width: 840px) {
+  .app-header,
+  .dash-panel-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .mode-btn {
+    margin: 8px 8px 0 0;
+  }
+  .dash-hero,
+  .dash-kpi-grid,
+  .takeaway-grid {
+    grid-template-columns: 1fr;
+  }
+  .dash-hero-metrics {
+    grid-template-columns: 1fr;
+  }
 }
