@@ -52,6 +52,11 @@ export interface GenerationSettings {
   max_new_tokens: number;
 }
 
+export interface ChatMessage {
+  role: "user" | "assistant" | "system";
+  content: string;
+}
+
 // ── Run result ─────────────────────────────────
 export interface RunResult {
   runIndex: number;

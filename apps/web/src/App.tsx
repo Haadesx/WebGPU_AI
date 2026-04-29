@@ -18,6 +18,7 @@ import SummaryCards from "./components/SummaryCards";
 import Charts from "./components/Charts";
 import DeviceInfo from "./components/DeviceInfo";
 import April26Dashboard from "./components/April26Dashboard";
+import LocalChatPanel from "./components/LocalChatPanel";
 
 const edgeEngine = new EdgeEngine();
 const cloudSmall = new CloudEngine("small");
@@ -169,7 +170,23 @@ export default function App() {
       </header>
 
       {mode === "dashboard" ? (
-        <April26Dashboard />
+        <April26Dashboard
+          sidebar={(
+            <LocalChatPanel
+              engine={edgeEngine}
+              models={EDGE_MODELS}
+              selectedModel={selectedModel}
+              onSelectModel={setSelectedModel}
+              onLoadModel={handleLoad}
+              onUnloadModel={handleUnload}
+              isLoaded={edgeLoaded}
+              isLoading={edgeLoading}
+              loadProgress={loadProgress}
+              gpuSupported={gpuOk === true}
+              gpuError={gpuError}
+            />
+          )}
+        />
       ) : (
         <>
 

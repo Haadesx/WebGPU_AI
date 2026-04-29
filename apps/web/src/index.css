@@ -424,6 +424,12 @@ tbody tr:hover {
   flex-direction: column;
   gap: 18px;
 }
+.dashboard-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 18px;
+  align-items: start;
+}
 .dash-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
@@ -591,6 +597,151 @@ tbody tr:hover {
   font-size: 0.86rem;
   margin-top: 5px;
 }
+.dash-chat-panel {
+  position: sticky;
+  top: 20px;
+  background:
+    linear-gradient(180deg, rgba(79, 143, 247, 0.14), rgba(15, 17, 23, 0)),
+    var(--bg-card);
+  border: 1px solid rgba(79, 143, 247, 0.28);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+.dash-chat-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+.dash-chat-kicker {
+  color: var(--accent-green);
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.dash-chat-head h3 {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.dash-chat-head p {
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+}
+.dash-chat-alert,
+.dash-chat-error {
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin-top: 14px;
+  padding: 10px 12px;
+}
+.dash-chat-alert {
+  background: rgba(247, 169, 79, 0.1);
+  border: 1px solid rgba(247, 169, 79, 0.24);
+  color: var(--accent-orange);
+}
+.dash-chat-error {
+  background: rgba(247, 95, 95, 0.1);
+  border: 1px solid rgba(247, 95, 95, 0.28);
+  color: var(--accent-red);
+}
+.dash-chat-controls,
+.dash-chat-compose {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+.dash-chat-label {
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  gap: 6px;
+}
+.dash-chat-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.dash-chat-starters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+.dash-chat-starter {
+  background: rgba(79, 143, 247, 0.08);
+  border: 1px solid rgba(79, 143, 247, 0.2);
+  color: var(--text-primary);
+  padding: 10px 12px;
+  text-align: left;
+}
+.dash-chat-starter:hover:not(:disabled) {
+  background: rgba(79, 143, 247, 0.14);
+}
+.dash-chat-messages {
+  background: rgba(15, 17, 23, 0.68);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  max-height: 420px;
+  min-height: 260px;
+  overflow-y: auto;
+  padding: 14px;
+}
+.chat-bubble {
+  border-radius: 10px;
+  max-width: 100%;
+  padding: 11px 12px;
+}
+.chat-bubble span {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.chat-bubble p {
+  color: var(--text-primary);
+  font-size: 0.86rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.chat-bubble.user {
+  align-self: flex-end;
+  background: rgba(79, 143, 247, 0.18);
+  border: 1px solid rgba(79, 143, 247, 0.26);
+}
+.chat-bubble.assistant {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+.dash-chat-compose textarea {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  min-height: 104px;
+  outline: none;
+  padding: 12px;
+  resize: vertical;
+}
+.dash-chat-compose textarea:focus {
+  border-color: var(--accent-blue);
+}
 
 /* ── Recharts overrides ─────────────────────── */
 .recharts-default-tooltip {
@@ -608,6 +759,7 @@ tbody tr:hover {
   .mode-btn {
     margin: 8px 8px 0 0;
   }
+  .dashboard-shell,
   .dash-hero,
   .dash-kpi-grid,
   .takeaway-grid {
@@ -615,5 +767,8 @@ tbody tr:hover {
   }
   .dash-hero-metrics {
     grid-template-columns: 1fr;
+  }
+  .dash-chat-panel {
+    position: static;
   }
 }
