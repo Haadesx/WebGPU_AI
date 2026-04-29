@@ -8,6 +8,7 @@ import {
   type InitProgressReport,
 } from "@mlc-ai/web-llm";
 import type {
+  ChatMessage,
   InferenceEngine,
   InferenceResult,
   GenerationSettings,
@@ -100,6 +101,14 @@ export class EdgeEngine implements InferenceEngine {
     settings: GenerationSettings,
     onToken?: (token: string) => void
   ): Promise<InferenceResult> {
+    return this.chat([{ role: "user", content: prompt }], settings, onToken);
+  }
+
+  async chat(
+    messages: ChatMessage[],
+    settings: GenerationSettings,
+    onToken?: (token: string) => void
+  ): Promise<InferenceResult> {
     if (!this.engine) throw new Error("Edge engine not loaded");
 
     const memBefore = getJSHeapMB();
@@ -109,7 +118,7 @@ export class EdgeEngine implements InferenceEngine {
     let tokenCount = 0;
 
     const stream = await this.engine.chat.completions.create({
-      messages: [{ role: "user", content: prompt }],
+      messages,
       temperature: settings.temperature,
       top_p: settings.top_p,
       max_tokens: settings.max_new_tokens,
@@ -135,7 +144,8 @@ export class EdgeEngine implements InferenceEngine {
     const tps = generationTime > 0 ? (tokenCount / (generationTime / 1000)) : 0;
 
     // Prompt token estimation (whitespace-split)
-    const promptTokensEst = prompt.split(/\s+/).length;
+    const promptText = messages.map((message) => message.content).join(" ");
+    const promptTokensEst = promptText.split(/\s+/).filter(Boolean).length;
     const whitespaceTokens = output.split(/\s+/).filter(Boolean).length;
 
     const memAfter = getJSHeapMB();
